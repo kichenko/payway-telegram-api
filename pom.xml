@@ -27,7 +27,7 @@
         <project.build.encoding>UTF-8</project.build.encoding>
         <project.build.resource.encoding>UTF-8</project.build.resource.encoding>
         <project.build.source.encoding>UTF-8</project.build.source.encoding>
-        <compiler.java.version>1.7</compiler.java.version>
+        <compiler.java.version>1.8</compiler.java.version>
 
         <!-- plugin versions -->
         <maven.source.plugin.version>2.2.1</maven.source.plugin.version>
