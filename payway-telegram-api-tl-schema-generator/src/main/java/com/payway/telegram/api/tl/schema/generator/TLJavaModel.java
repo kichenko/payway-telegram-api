@@ -488,7 +488,7 @@ public final class TLJavaModel {
                 if (((JavaTypeVectorReference) p.getReference()).getInternalReference() instanceof JavaTypeBuiltInReference) {
                     JavaTypeBuiltInReference intReference = (JavaTypeBuiltInReference) ((JavaTypeVectorReference) p.getReference()).getInternalReference();
                     if ("int".equals(intReference.getJavaName())) {
-                        serializer += JavaTemplate.JAVA_DESERIALIZE_VECTOR.replace("{int}", p.getInternalName());
+                        serializer += JavaTemplate.JAVA_DESERIALIZE_INT_VECTOR.replace("{int}", p.getInternalName());
                     } else if ("long".equals(intReference.getJavaName())) {
                         serializer += JavaTemplate.JAVA_DESERIALIZE_LONG_VECTOR.replace("{int}", p.getInternalName());
                     } else if ("String".equals(intReference.getJavaName())) {
@@ -745,7 +745,7 @@ public final class TLJavaModel {
             }
 
             generatedFile = generatedFile
-                    .replace("{name}", m.requestClassName)
+                    .replace("{name}", m.getRequestClassName())
                     .replace("{package}", JavaConfigConstant.JAVA_PACKAGE + "." + JavaConfigConstant.JAVA_METHOD_PACKAGE)
                     .replace("{class_id}", Integer.toString(m.getTlMethod().getId()))
                     .replace("{return_type}", returnTypeName)
@@ -836,7 +836,7 @@ public final class TLJavaModel {
                 if (!"boolean".equals(returnReference.getJavaName())) {
                     throw new Exception("Only boolean built-in reference allowed as return");
                 }
-                responseParser = responseParser.replace("{body}", JavaTemplate.JAVA_METHOD_PARSER_METHOD_BODY_GENERAL.replace("{return_type}", JavaConfigConstant.JAVA_CORE_PACKAGE + "TLBool"));
+                responseParser = responseParser.replace("{body}", JavaTemplate.JAVA_METHOD_PARSER_METHOD_BODY_GENERAL.replace("{return_type}", JavaConfigConstant.JAVA_CORE_PACKAGE + ".TLBool"));
             } else {
                 JavaParameter functionalParameter = null;
                 for (final JavaParameter p : m.getParameters()) {

@@ -23,23 +23,24 @@ public final class JavaConfigConstant {
     public final static String JAVA_CORE_PACKAGE = "com.payway.telegram.api.tl.core";
     public final static String JAVA_CORE_UTILS_PACKAGE = "com.payway.telegram.api.tl.core.utils";
     public final static String JAVA_PACKAGE = "com.payway.telegram.api.tl.schema";
-    public final static String JAVA_METHOD_PACKAGE = "requests";
+    public final static String JAVA_METHOD_PACKAGE = "methods";
     public final static String JAVA_CLASS_PREFIX = "TL";
     public final static String JAVA_ABSTRACT_CLASS_PREFIX = "Abstract";
-    public final static String JAVA_METHOD_CLASS_PREFIX = "Request";
+    public final static String JAVA_METHOD_CLASS_PREFIX = "Method";
 
     static {
         IGNORE_UNITING = new ArrayList<>();
         IGNORE_UNITING.add("DecryptedMessageAction");
+        IGNORE_UNITING.add("Update");
     }
 
     private static String toProperCase(String s) {
-        return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
+        return s.substring(0, 1).toUpperCase() + s.substring(1);
     }
 
     private static String camelCase(final String src, final String reqex) {
 
-        if (!reqex.isEmpty() && src.contains(reqex)) {
+        if (!reqex.isEmpty()) {
             String camelCaseString = "";
             for (String part : src.split(reqex)) {
                 camelCaseString = camelCaseString + toProperCase(part);
@@ -71,13 +72,11 @@ public final class JavaConfigConstant {
     }
 
     public static String mapJavaMethodName(TLMethodDef methodDef) {
-        String s = uCamelCase(methodDef.getName(), "_");
-        return uCamelCase(methodDef.getName(), "_");
+        return uCamelCase(methodDef.getName(), "\\.");
     }
 
     public static String mapJavaMethodClassName(TLMethodDef methodDef) {
-        String s = JAVA_CLASS_PREFIX + JAVA_METHOD_CLASS_PREFIX + uCamelCase(methodDef.getName(), "_");
-        return JAVA_CLASS_PREFIX + JAVA_METHOD_CLASS_PREFIX + uCamelCase(methodDef.getName(), "_");
+        return JAVA_CLASS_PREFIX + uCamelCase(methodDef.getName(), "\\.") + JAVA_METHOD_CLASS_PREFIX;
     }
 
     public static String mapJavaPackage(TLCombinedTypeDef typedef) {
@@ -91,16 +90,13 @@ public final class JavaConfigConstant {
 
     public static String mapJavaTypeName(TLCombinedTypeDef typedef) {
         if (typedef.getConstructors().size() == 1) {
-            String s = JAVA_CLASS_PREFIX + uCamelCase(skipNamespace(typedef.getName()), "_");
             return JAVA_CLASS_PREFIX + uCamelCase(skipNamespace(typedef.getName()), "_");
         } else {
-            String s = JAVA_CLASS_PREFIX + JAVA_ABSTRACT_CLASS_PREFIX + uCamelCase(skipNamespace(typedef.getName()), "_");
             return JAVA_CLASS_PREFIX + JAVA_ABSTRACT_CLASS_PREFIX + uCamelCase(skipNamespace(typedef.getName()), "_");
         }
     }
 
     public static String mapJavaChildName(TLConstructorDef constructor) {
-        String s = JAVA_CLASS_PREFIX + uCamelCase(skipNamespace(constructor.getName()), "_");
         return JAVA_CLASS_PREFIX + uCamelCase(skipNamespace(constructor.getName()), "_");
     }
 
@@ -108,7 +104,6 @@ public final class JavaConfigConstant {
         if (parameter.getName().equals("long")) {
             return "lon";
         } else {
-            String s = lCamelCase(parameter.getName(), "_");
             return lCamelCase(parameter.getName(), "_");
         }
     }

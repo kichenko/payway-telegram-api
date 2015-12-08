@@ -23,10 +23,12 @@ public class AppMain {
         final File scrFolder = new File("c:/tl.json");
         final File dstFolder = new File("c:/");
 
-        final ObjectMapper mapper = new ObjectMapper();
-
-        final JsonNode sourceJsonTree = mapper.readValue(scrFolder, JsonNode.class);
-        final TLDefinition definition = TLGeneratorSyntax.buildFromJson(sourceJsonTree);
+        final TLDefinition definition = TLGeneratorSyntax.buildFromJson(
+                new ObjectMapper().readValue(
+                        scrFolder,
+                        JsonNode.class
+                )
+        );
 
         TLGeneratorSyntax.checkDefinition(definition);
         final TLModel model = TLGeneratorModel.buildModel(definition);

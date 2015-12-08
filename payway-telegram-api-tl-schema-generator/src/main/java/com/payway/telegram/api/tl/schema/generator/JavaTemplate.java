@@ -13,6 +13,7 @@ public final class JavaTemplate {
 
     public final static String JAVA_IMPORTS = "import " + JavaConfigConstant.JAVA_CORE_PACKAGE + ".*;\n"
             + "import java.io.*;\n\n"
+            + "import " + JavaConfigConstant.JAVA_CORE_UTILS_PACKAGE + ".*;\n"
             + "import static " + JavaConfigConstant.JAVA_CORE_UTILS_PACKAGE + ".StreamingUtils.*;\n";
 
     public final static String JAVA_CLASS_TEMPLATE = "package {package};\n\n"
@@ -26,7 +27,7 @@ public final class JavaTemplate {
 
     public final static String JAVA_REQUSTER_TEMPLATE = "package {package};\n\n"
             + JAVA_IMPORTS
-            + "\nimport {package}.requests.*;\n"
+            + "\nimport {package}.methods.*;\n"
             + "\npublic class TLApiRequester {\n\nprivate RequestExecutor executor;\n"
             + "private TLContext context;\n\n"
             + "public TLApiRequester(RequestExecutor executor, TLContext context) {\n"
@@ -61,7 +62,7 @@ public final class JavaTemplate {
             + "if (res instanceof {return_type}) {return ({return_type})res;}\n"
             + "else { throw new IOException(\"Incorrect response type. Expected {return_type}, got: \" + res.getClass().getCanonicalName()); }";
 
-    public final static String JAVA_METHOD_PARSER_METHOD_BODY_VECTOR = "return readTLVector(stream, context)";
+    public final static String JAVA_METHOD_PARSER_METHOD_BODY_VECTOR = "return readTLVector(stream, context);";
     public final static String JAVA_METHOD_PARSER_METHOD_BODY_INT_VECTOR = "return readTLIntVector(stream, context);";
     public final static String JAVA_METHOD_PARSER_METHOD_BODY_LONG_VECTOR = "return readTLLongVector(stream, context);";
     public final static String JAVA_METHOD_PARSER_METHOD_BODY_REFERENCE = "return ({return_type}) {int}.deserializeResponse(stream, context);";

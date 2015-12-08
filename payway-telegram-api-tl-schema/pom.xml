@@ -5,7 +5,7 @@
 
     <groupId>com.payway.telegram.api</groupId>
     <artifactId>payway-telegram-api-tl-schema</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <name>payway-telegram-api-tl-schema</name>
     <version>1.0-SNAPSHOT</version>
         
@@ -14,5 +14,13 @@
         <artifactId>payway-telegram-api</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+	
+    <dependencies>
+        <dependency>
+            <groupId>com.payway.telegram.api</groupId>
+            <artifactId>payway-telegram-api-tl-core</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>                
+    </dependencies>
     
 </project>
