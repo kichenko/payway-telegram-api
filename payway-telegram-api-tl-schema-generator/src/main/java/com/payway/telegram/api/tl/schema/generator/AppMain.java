@@ -22,9 +22,7 @@ public class AppMain {
 
         final File scrFolder = new File("c:/tl.json");
         final File dstFolder = new File("c:/");
-        final String packageName = "com.payway.telegram.api.tl.schema";
 
-        System.out.println("Reading definitions...");
         final ObjectMapper mapper = new ObjectMapper();
 
         final JsonNode sourceJsonTree = mapper.readValue(scrFolder, JsonNode.class);

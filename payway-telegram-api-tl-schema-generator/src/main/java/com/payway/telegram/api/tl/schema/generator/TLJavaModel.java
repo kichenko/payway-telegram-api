@@ -13,6 +13,11 @@ import com.payway.telegram.api.tl.schema.generator.TLGeneratorModel.TLMethodDef;
 import com.payway.telegram.api.tl.schema.generator.TLGeneratorModel.TLModel;
 import com.payway.telegram.api.tl.schema.generator.TLGeneratorModel.TLParameterDef;
 import com.payway.telegram.api.tl.schema.generator.TLGeneratorModel.TLTypeDef;
+import java.io.File;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,6 +40,15 @@ public final class TLJavaModel {
             this.types = types;
             this.methods = methods;
         }
+
+        public Map<String, JavaTypeObject> getTypes() {
+            return types;
+        }
+
+        public List<JavaRpcMethod> getMethods() {
+            return methods;
+        }
+
     }
 
     public static class JavaTypeObject {
@@ -148,8 +162,8 @@ public final class TLJavaModel {
             this.tlParameterDef = tlParameterDef;
 
             internalName = JavaConfigConstant.mapVariableBaseName(tlParameterDef);
-            getterName = "get" + internalName;
-            setterName = "set" + internalName;
+            getterName = "get" + JavaConfigConstant.uCamelCase(internalName, "");
+            setterName = "set" + JavaConfigConstant.uCamelCase(internalName, "");
             reference = null;
         }
 
@@ -319,9 +333,12 @@ public final class TLJavaModel {
 
     public static class JavaTypeVectorReference extends JavaTypeReference {
 
+        private JavaTypeReference internalReference;
+
         public JavaTypeVectorReference(TLTypeDef tlReference, JavaTypeReference internalReference) throws Exception {
 
             setTlReference(tlReference);
+            setInternalReference(internalReference);
 
             if (internalReference instanceof JavaTypeBuiltInReference) {
                 if ("int".equals(internalReference.getJavaName())) {
@@ -341,6 +358,15 @@ public final class TLJavaModel {
                 throw new Exception("Unsupported reference in vector: " + internalReference.getJavaName());
             }
         }
+
+        public JavaTypeReference getInternalReference() {
+            return internalReference;
+        }
+
+        public void setInternalReference(JavaTypeReference internalReference) {
+            this.internalReference = internalReference;
+        }
+
     }
 
     public static JavaTypeReference mapReference(Map<String, JavaTypeObject> javaTypes, TLTypeDef tlType) throws Exception {
@@ -407,7 +433,503 @@ public final class TLJavaModel {
         return new JavaModel(javaTypes, javaMethods);
     }
 
-    public static void writeJavaClasses(JavaModel model, String path) {
-        //
+    public static String buildSerializer(List<JavaParameter> parameters) throws Exception {
+
+        if (parameters.isEmpty()) {
+            return "";
+        }
+
+        String serializer = "";
+        for (final JavaParameter p : parameters) {
+            if (p.getReference() instanceof JavaTypeTlReference) {
+                serializer += JavaTemplate.JAVA_SERIALIZE_OBJECT.replace("{int}", p.getInternalName());
+            } else if (p.getReference() instanceof JavaTypeVectorReference) {
+                serializer += JavaTemplate.JAVA_SERIALIZE_VECTOR.replace("{int}", p.getInternalName());
+            } else if (p.getReference() instanceof JavaTypeBuiltInReference) {
+                if ("int".equals(p.getTlParameterDef().getTypeDef().getName())) {
+                    serializer += JavaTemplate.JAVA_SERIALIZE_INT.replace("{int}", p.getInternalName());
+                } else if ("Bool".equals(p.getTlParameterDef().getTypeDef().getName())) {
+                    serializer += JavaTemplate.JAVA_SERIALIZE_BOOLEAN.replace("{int}", p.getInternalName());
+                } else if ("long".equals(p.getTlParameterDef().getTypeDef().getName())) {
+                    serializer += JavaTemplate.JAVA_SERIALIZE_LONG.replace("{int}", p.getInternalName());
+                } else if ("double".equals(p.getTlParameterDef().getTypeDef().getName())) {
+                    serializer += JavaTemplate.JAVA_SERIALIZE_DOUBLE.replace("{int}", p.getInternalName());
+                } else if ("string".equals(p.getTlParameterDef().getTypeDef().getName())) {
+                    serializer += JavaTemplate.JAVA_SERIALIZE_STRING.replace("{int}", p.getInternalName());
+                } else if ("bytes".equals(p.getTlParameterDef().getTypeDef().getName())) {
+                    serializer += JavaTemplate.JAVA_SERIALIZE_BYTES.replace("{int}", p.getInternalName());
+                } else {
+                    throw new Exception("Unknown internal type: " + p.getTlParameterDef().getTypeDef().getName());
+                }
+            } else if (p.getReference() instanceof JavaTypeFunctionalReference) {
+                serializer += JavaTemplate.JAVA_SERIALIZE_FUNCTIONAL.replace("{int}", p.getInternalName());
+            } else if (p.getReference() instanceof JavaTypeAnyReference) {
+                serializer += JavaTemplate.JAVA_SERIALIZE_OBJECT.replace("{int}", p.getInternalName());
+            } else {
+                throw new Exception("Unknown type: " + p.getTlParameterDef().getTypeDef().getName());
+            }
+        }
+
+        return JavaTemplate.JAVA_SERIALIZE_TEMPLATE.replace("{body}", serializer);
+    }
+
+    public static String buildDeserializer(List<JavaParameter> parameters) throws Exception {
+
+        if (parameters.isEmpty()) {
+            return "";
+        }
+
+        String serializer = "";
+        for (final JavaParameter p : parameters) {
+            if (p.getReference() instanceof JavaTypeTlReference) {
+                serializer += JavaTemplate.JAVA_DESERIALIZE_OBJECT.replace("{int}", p.getInternalName())
+                        .replace("{type}", ((JavaTypeTlReference) p.getReference()).getJavaName());
+            } else if (p.getReference() instanceof JavaTypeVectorReference) {
+                if (((JavaTypeVectorReference) p.getReference()).getInternalReference() instanceof JavaTypeBuiltInReference) {
+                    JavaTypeBuiltInReference intReference = (JavaTypeBuiltInReference) ((JavaTypeVectorReference) p.getReference()).getInternalReference();
+                    if ("int".equals(intReference.getJavaName())) {
+                        serializer += JavaTemplate.JAVA_DESERIALIZE_VECTOR.replace("{int}", p.getInternalName());
+                    } else if ("long".equals(intReference.getJavaName())) {
+                        serializer += JavaTemplate.JAVA_DESERIALIZE_LONG_VECTOR.replace("{int}", p.getInternalName());
+                    } else if ("String".equals(intReference.getJavaName())) {
+                        serializer += JavaTemplate.JAVA_DESERIALIZE_STRING_VECTOR.replace("{int}", p.getInternalName());
+                    } else {
+                        serializer += JavaTemplate.JAVA_DESERIALIZE_VECTOR.replace("{int}", p.getInternalName());
+                    }
+                } else {
+                    serializer += JavaTemplate.JAVA_DESERIALIZE_VECTOR.replace("{int}", p.getInternalName());
+                }
+            } else if (p.getReference() instanceof JavaTypeBuiltInReference) {
+                if ("int".equals(p.getTlParameterDef().getTypeDef().getName())) {
+                    serializer += JavaTemplate.JAVA_DESERIALIZE_INT.replace("{int}", p.getInternalName());
+                } else if ("Bool".equals(p.getTlParameterDef().getTypeDef().getName())) {
+                    serializer += JavaTemplate.JAVA_DESERIALIZE_BOOLEAN.replace("{int}", p.getInternalName());
+                } else if ("long".equals(p.getTlParameterDef().getTypeDef().getName())) {
+                    serializer += JavaTemplate.JAVA_DESERIALIZE_LONG.replace("{int}", p.getInternalName());
+                } else if ("double".equals(p.getTlParameterDef().getTypeDef().getName())) {
+                    serializer += JavaTemplate.JAVA_DESERIALIZE_DOUBLE.replace("{int}", p.getInternalName());
+                } else if ("string".equals(p.getTlParameterDef().getTypeDef().getName())) {
+                    serializer += JavaTemplate.JAVA_DESERIALIZE_STRING.replace("{int}", p.getInternalName());
+                } else if ("bytes".equals(p.getTlParameterDef().getTypeDef().getName())) {
+                    serializer += JavaTemplate.JAVA_DESERIALIZE_BYTES.replace("{int}", p.getInternalName());
+                } else {
+                    throw new Exception("Unknown internal type: " + p.getTlParameterDef().getTypeDef().getName());
+                }
+            } else if (p.getReference() instanceof JavaTypeFunctionalReference) {
+                serializer += JavaTemplate.JAVA_DESERIALIZE_FUNCTIONAL.replace("{int}", p.getInternalName());
+            } else if (p.getReference() instanceof JavaTypeAnyReference) {
+                serializer += JavaTemplate.JAVA_DESERIALIZE_OBJECT.replace("{int}", p.getInternalName())
+                        .replace("{type}", "TLObject");
+            } else {
+                throw new Exception("Unknown type: " + p.getTlParameterDef().getTypeDef().getName());
+            }
+        }
+
+        return JavaTemplate.JAVA_DESERIALIZE_TEMPLATE.replace("{body}", serializer);
+    }
+
+    public static void writeJavaClasses(JavaModel model, String path) throws Exception {
+
+        String generatedFile;
+        String fields;
+        String getterSetter;
+        String directory;
+
+        for (final JavaTypeObject t : model.getTypes().values()) {
+
+            if (t.getConstructors().size() == 1 && !TLConstant.IGNORED_TYPES.contains(t.getTlType().getName())) {
+                generatedFile = JavaTemplate.JAVA_CLASS_TEMPLATE;
+                generatedFile = generatedFile
+                        .replace("{name}", t.getJavaTypeName())
+                        .replace("{package}", t.getJavaPackage())
+                        .replace("{class_id}", Integer.toString(t.getConstructors().get(0).getTlConstructor().getId()))
+                        .replace("{to_string}",
+                                JavaTemplate.JAVA_TO_STRING_TEMPLATE.replace("{value}", t.getConstructors().get(0).getTlConstructor().getName()
+                                        + "#"
+                                        + Integer.toString(t.getConstructors().get(0).getTlConstructor().getId())));
+
+                fields = "";
+                for (final JavaParameter p : t.getConstructors().get(0).getParameters()) {
+                    fields += JavaTemplate.JAVA_FIELD_TEMPLATE
+                            .replace("{type}", p.getReference().getJavaName())
+                            .replace("{int}", p.getInternalName());
+                }
+
+                generatedFile = generatedFile.replace("{fields}", fields);
+
+                getterSetter = "";
+                for (final JavaParameter p : t.getConstructors().get(0).getParameters()) {
+                    getterSetter += JavaTemplate.JAVA_GETTER_SETTER_TEMPLATE
+                            .replace("{type}", p.getReference().getJavaName())
+                            .replace("{int}", p.getInternalName())
+                            .replace("{getter}", p.getGetterName())
+                            .replace("{setter}", p.getSetterName());
+                }
+
+                if (t.getConstructors().get(0).getParameters().size() > 0) {
+                    String constructorArgs = "";
+                    String constructorBody = "";
+                    for (final JavaParameter p : t.getConstructors().get(0).getParameters()) {
+                        if (!"".equals(constructorArgs)) {
+                            constructorArgs += ", ";
+                        }
+
+                        constructorArgs += JavaTemplate.JAVA_CONSTRUCTOR_ARG_TEMPLATE
+                                .replace("{type}", p.getReference().getJavaName())
+                                .replace("{int}", p.getInternalName());
+
+                        constructorBody += JavaTemplate.JAVA_CONSTRUCTOR_BODY_TEMPLATE
+                                .replace("{type}", p.getReference().getJavaName())
+                                .replace("{int}", p.getInternalName());
+                    }
+                    generatedFile = generatedFile.replace("{constructor}",
+                            JavaTemplate.JAVA_CONSTRUCTOR_TEMPLATE
+                            .replace("{name}", t.getJavaTypeName())
+                            .replace("{args}", constructorArgs)
+                            .replace("{body}", constructorBody));
+                } else {
+                    generatedFile = generatedFile.replace("{constructor}", "");
+                }
+
+                generatedFile = generatedFile.replace("{getter-setters}", getterSetter);
+                generatedFile = generatedFile.replace("{serialize}", buildSerializer(t.getConstructors().get(0).getParameters()));
+                generatedFile = generatedFile.replace("{deserialize}", buildDeserializer(t.getConstructors().get(0).getParameters()));
+
+                directory = path + t.getJavaPackage().replace(".", "/");
+                new File(directory).mkdirs();
+                Files.write(
+                        Paths.get(new File(directory + "/" + t.getJavaTypeName() + ".java").toURI()),
+                        generatedFile.getBytes(Charset.forName("utf-8")),
+                        StandardOpenOption.CREATE
+                );
+            } else {
+
+                generatedFile = JavaTemplate.JAVA_ABS_CLASS_TEMPLATE;
+                generatedFile = generatedFile
+                        .replace("{name}", t.getJavaTypeName())
+                        .replace("{package}", t.getJavaPackage());
+
+                fields = "";
+                for (final JavaParameter p : t.getCommonParameters()) {
+                    fields += JavaTemplate.JAVA_FIELD_TEMPLATE
+                            .replace("{type}", p.getReference().getJavaName())
+                            .replace("{int}", p.getInternalName());
+                }
+
+                generatedFile = generatedFile.replace("{fields}", fields);
+
+                getterSetter = "";
+                for (final JavaParameter p : t.getCommonParameters()) {
+                    getterSetter += JavaTemplate.JAVA_GETTER_SETTER_TEMPLATE
+                            .replace("{type}", p.getReference().getJavaName())
+                            .replace("{int}", p.getInternalName())
+                            .replace("{getter}", p.getGetterName())
+                            .replace("{setter}", p.getSetterName());
+                }
+
+                generatedFile = generatedFile.replace("{getter-setters}", getterSetter);
+
+                directory = path + t.getJavaPackage().replace(".", "/");
+                new File(directory).mkdirs();
+                Files.write(
+                        Paths.get(new File(directory + "/" + t.getJavaTypeName() + ".java").toURI()),
+                        generatedFile.getBytes(Charset.forName("utf-8")),
+                        StandardOpenOption.CREATE
+                );
+
+                for (final JavaTypeConstructor constr : t.getConstructors()) {
+                    generatedFile = JavaTemplate.JAVA_CHILD_CLASS_TEMPLATE;
+                    generatedFile = generatedFile
+                            .replace("{name}", constr.javaClassName)
+                            .replace("{base-name}", t.javaTypeName)
+                            .replace("{package}", t.javaPackage)
+                            .replace("{class_id}", Integer.toString(constr.getTlConstructor().getId()))
+                            .replace("{to_string}",
+                                    JavaTemplate.JAVA_TO_STRING_TEMPLATE.replace(
+                                            "{value}",
+                                            constr.getTlConstructor().getName() + "#" + Integer.toString(constr.getTlConstructor().getId())
+                                    ));
+
+                    fields = "";
+                    for (final JavaParameter p : constr.getParameters()) {
+                        boolean skip = false;
+                        for (final JavaParameter x : t.getCommonParameters()) {
+                            if (x.getInternalName().equals(p.getInternalName())) {
+                                skip = true;
+                                break;
+                            }
+                        }
+
+                        if (skip) {
+                            continue;
+                        }
+
+                        fields += JavaTemplate.JAVA_FIELD_TEMPLATE
+                                .replace("{type}", p.getReference().getJavaName())
+                                .replace("{int}", p.getInternalName());
+                    }
+
+                    generatedFile = generatedFile.replace("{fields}", fields);
+
+                    getterSetter = "";
+                    for (final JavaParameter p : constr.getParameters()) {
+
+                        boolean skip = false;
+                        for (final JavaParameter x : t.getCommonParameters()) {
+                            if (x.getInternalName().equals(p.getInternalName())) {
+                                skip = true;
+                                break;
+                            }
+                        }
+
+                        if (skip) {
+                            continue;
+                        }
+
+                        getterSetter += JavaTemplate.JAVA_GETTER_SETTER_TEMPLATE
+                                .replace("{type}", p.getReference().getJavaName())
+                                .replace("{int}", p.getInternalName())
+                                .replace("{getter}", p.getGetterName())
+                                .replace("{setter}", p.getSetterName());
+                    }
+
+                    if (constr.getParameters().size() > 0) {
+                        String constructorArgs = "";
+                        String constructorBody = "";
+                        for (final JavaParameter p : constr.getParameters()) {
+                            if (!"".equals(constructorArgs)) {
+                                constructorArgs += ", ";
+                            }
+
+                            constructorArgs += JavaTemplate.JAVA_CONSTRUCTOR_ARG_TEMPLATE
+                                    .replace("{type}", p.getReference().getJavaName())
+                                    .replace("{int}", p.getInternalName());
+
+                            constructorBody += JavaTemplate.JAVA_CONSTRUCTOR_BODY_TEMPLATE
+                                    .replace("{type}", p.getReference().getJavaName())
+                                    .replace("{int}", p.getInternalName());
+                        }
+
+                        String constructor = JavaTemplate.JAVA_CONSTRUCTOR_TEMPLATE
+                                .replace("{name}", constr.getJavaClassName())
+                                .replace("{args}", constructorArgs)
+                                .replace("{body}", constructorBody);
+
+                        generatedFile = generatedFile.replace("{constructor}", constructor);
+
+                    } else {
+                        generatedFile = generatedFile.replace("{constructor}", "");
+                    }
+
+                    generatedFile = generatedFile.replace("{getter-setters}", getterSetter);
+
+                    generatedFile = generatedFile.replace("{serialize}", buildSerializer(constr.parameters));
+                    generatedFile = generatedFile.replace("{deserialize}", buildDeserializer(constr.parameters));
+
+                    directory = path + t.getJavaPackage().replace(".", "/");
+                    new File(directory).mkdirs();
+                    Files.write(
+                            Paths.get(new File(directory + "/" + constr.getJavaClassName() + ".java").toURI()),
+                            generatedFile.getBytes(Charset.forName("utf-8")),
+                            StandardOpenOption.CREATE
+                    );
+                }
+            }
+        }
+
+        for (final JavaRpcMethod m : model.getMethods()) {
+            generatedFile = JavaTemplate.JAVA_METHOD_TEMPLATE;
+            String returnTypeName = m.getReturnReference().getJavaName();
+            if ("boolean".equals(returnTypeName)) {
+                returnTypeName = JavaConfigConstant.JAVA_CORE_PACKAGE + ".TLBool";
+            }
+
+            generatedFile = generatedFile
+                    .replace("{name}", m.requestClassName)
+                    .replace("{package}", JavaConfigConstant.JAVA_PACKAGE + "." + JavaConfigConstant.JAVA_METHOD_PACKAGE)
+                    .replace("{class_id}", Integer.toString(m.getTlMethod().getId()))
+                    .replace("{return_type}", returnTypeName)
+                    .replace("{to_string}",
+                            JavaTemplate.JAVA_TO_STRING_TEMPLATE.replace("{value}", m.getTlMethod().getName() + "#" + Integer.toString(m.getTlMethod().getId())));
+
+            fields = "";
+            for (final JavaParameter p : m.getParameters()) {
+                fields += JavaTemplate.JAVA_FIELD_TEMPLATE
+                        .replace("{type}", p.getReference().getJavaName())
+                        .replace("{int}", p.getInternalName());
+            }
+
+            generatedFile = generatedFile.replace("{fields}", fields);
+
+            getterSetter = "";
+            for (final JavaParameter p : m.getParameters()) {
+                getterSetter += JavaTemplate.JAVA_GETTER_SETTER_TEMPLATE
+                        .replace("{type}", p.getReference().getJavaName())
+                        .replace("{int}", p.getInternalName())
+                        .replace("{getter}", p.getGetterName())
+                        .replace("{setter}", p.getSetterName());
+            }
+
+            if (m.getParameters().size() > 0) {
+                String constructorArgs = "";
+                String constructorBody = "";
+                for (final JavaParameter p : m.getParameters()) {
+                    if (!"".equals(constructorArgs)) {
+                        constructorArgs += ", ";
+                    }
+
+                    constructorArgs += JavaTemplate.JAVA_CONSTRUCTOR_ARG_TEMPLATE
+                            .replace("{type}", p.getReference().getJavaName())
+                            .replace("{int}", p.getInternalName());
+
+                    constructorBody += JavaTemplate.JAVA_CONSTRUCTOR_BODY_TEMPLATE
+                            .replace("{type}", p.getReference().getJavaName())
+                            .replace("{int}", p.getInternalName());
+                }
+
+                String constructor = JavaTemplate.JAVA_CONSTRUCTOR_TEMPLATE
+                        .replace("{name}", m.requestClassName)
+                        .replace("{args}", constructorArgs)
+                        .replace("{body}", constructorBody);
+
+                generatedFile = generatedFile.replace("{constructor}", constructor);
+
+            } else {
+                String constructor = JavaTemplate.JAVA_CONSTRUCTOR_TEMPLATE
+                        .replace("{name}", m.getRequestClassName())
+                        .replace("{args}", "")
+                        .replace("{body}", "");
+
+                generatedFile = generatedFile.replace("{constructor}", constructor);
+            }
+
+            generatedFile = generatedFile.replace("{getter-setters}", getterSetter);
+            generatedFile = generatedFile.replace("{serialize}", buildSerializer(m.getParameters()));
+            generatedFile = generatedFile.replace("{deserialize}", buildDeserializer(m.getParameters()));
+
+            String responseParser = JavaTemplate.JAVA_METHOD_PARSER_TEMPLATE.replace("{return_type}", returnTypeName);
+            if (m.getReturnReference() instanceof JavaTypeVectorReference) {
+
+                JavaTypeVectorReference vectorReference = (JavaTypeVectorReference) m.getReturnReference();
+
+                if (vectorReference.getInternalReference() instanceof JavaTypeBuiltInReference) {
+
+                    JavaTypeBuiltInReference intReference = (JavaTypeBuiltInReference) vectorReference.getInternalReference();
+                    if ("int".equals(intReference.getJavaName())) {
+                        responseParser = responseParser.replace("{body}", JavaTemplate.JAVA_METHOD_PARSER_METHOD_BODY_INT_VECTOR);
+                    } else if ("long".equals(intReference.getJavaName())) {
+                        responseParser = responseParser.replace("{body}", JavaTemplate.JAVA_METHOD_PARSER_METHOD_BODY_LONG_VECTOR);
+                    } else {
+                        throw new Exception("Unsupported vector internal reference");
+                    }
+                } else if (vectorReference.getInternalReference() instanceof JavaTypeTlReference) {
+                    JavaTypeTlReference tlReference = (JavaTypeTlReference) vectorReference.getInternalReference();
+                    responseParser = responseParser.replace("{body}", JavaTemplate.JAVA_METHOD_PARSER_METHOD_BODY_VECTOR.replace("{vector_type}", tlReference.getJavaName()));
+                } else {
+                    throw new Exception("Unsupported built-in reference");
+                }
+            } else if (m.returnReference instanceof JavaTypeTlReference) {
+                JavaTypeTlReference returnReference = (JavaTypeTlReference) m.getReturnReference();
+                responseParser = responseParser.replace("{body}", JavaTemplate.JAVA_METHOD_PARSER_METHOD_BODY_GENERAL.replace("{return_type}", returnReference.getJavaName()));
+            } else if (m.returnReference instanceof JavaTypeBuiltInReference) {
+                JavaTypeBuiltInReference returnReference = (JavaTypeBuiltInReference) m.getReturnReference();
+                if (!"boolean".equals(returnReference.getJavaName())) {
+                    throw new Exception("Only boolean built-in reference allowed as return");
+                }
+                responseParser = responseParser.replace("{body}", JavaTemplate.JAVA_METHOD_PARSER_METHOD_BODY_GENERAL.replace("{return_type}", JavaConfigConstant.JAVA_CORE_PACKAGE + "TLBool"));
+            } else {
+                JavaParameter functionalParameter = null;
+                for (final JavaParameter p : m.getParameters()) {
+                    if (p.reference instanceof JavaTypeFunctionalReference) {
+                        functionalParameter = p;
+                        break;
+                    }
+                }
+
+                if (functionalParameter == null) {
+                    throw new Exception("Any reference without functional reference: " + m.getMethodName());
+                }
+
+                responseParser = responseParser.replace(
+                        "{body}",
+                        JavaTemplate.JAVA_METHOD_PARSER_METHOD_BODY_REFERENCE.replace("{return_type}", "TLObject")
+                        .replace("{int}", functionalParameter.getInternalName())
+                );
+            }
+
+            generatedFile = generatedFile.replace("{responseParser}", responseParser);
+
+            directory = path + (JavaConfigConstant.JAVA_PACKAGE + "." + JavaConfigConstant.JAVA_METHOD_PACKAGE).replace(".", "/");
+            new File(directory).mkdirs();
+            Files.write(
+                    Paths.get(new File(directory + "/" + m.getRequestClassName() + ".java").toURI()),
+                    generatedFile.getBytes(Charset.forName("utf-8")),
+                    StandardOpenOption.CREATE
+            );
+        }
+
+        String requests = "";
+        for (final JavaRpcMethod m : model.getMethods()) {
+
+            String args = "";
+            String methodArgs = "";
+            for (final JavaParameter p : m.getParameters()) {
+                if (!"".equals(args)) {
+                    args += ", ";
+                }
+                if (!"".equals(methodArgs)) {
+                    methodArgs += ", ";
+                }
+                methodArgs += p.getInternalName();
+                args += p.getReference().getJavaName() + " " + p.getInternalName();
+            }
+
+            String returnTypeName = m.getReturnReference().getJavaName();
+            if ("boolean".equals(returnTypeName)) {
+                returnTypeName = "TLBool";
+            }
+
+            requests += JavaTemplate.JAVA_REQUESTER_METHOD.replace("{return_type}", returnTypeName)
+                    .replace("{method_name}", m.getMethodName())
+                    .replace("{method_class}", m.getRequestClassName())
+                    .replace("{args}", args)
+                    .replace("{method_args}", methodArgs);
+        }
+
+        generatedFile = JavaTemplate.JAVA_REQUSTER_TEMPLATE.replace("{methods}", requests).replace("{package}", JavaConfigConstant.JAVA_PACKAGE);
+
+        directory = path + JavaConfigConstant.JAVA_PACKAGE.replace(".", "/");
+        new File(directory).mkdirs();
+        Files.write(
+                Paths.get(new File(directory + "/TLApiRequester.java").toURI()),
+                generatedFile.getBytes(Charset.forName("utf-8")),
+                StandardOpenOption.CREATE
+        );
+
+        String contextInit = "";
+        for (final JavaTypeObject t : model.getTypes().values()) {
+
+            if (t.getConstructors().size() == 1 && !TLConstant.IGNORED_TYPES.contains(t.getTlType().getName())) {
+                contextInit += JavaTemplate.JAVA_CONTEXT_INT_RECORD
+                        .replace("{type}", t.getJavaPackage() + "." + t.getJavaTypeName())
+                        .replace("{id}", Integer.toString(t.getConstructors().get(0).getTlConstructor().getId()));
+            } else {
+                for (final JavaTypeConstructor c : t.getConstructors()) {
+                    contextInit += JavaTemplate.JAVA_CONTEXT_INT_RECORD
+                            .replace("{type}", t.getJavaPackage() + "." + c.getJavaClassName())
+                            .replace("{id}", Integer.toString(c.getTlConstructor().getId()));
+                }
+            }
+        }
+
+        generatedFile = JavaTemplate.JAVA_CONTEXT_TEMPLATE.replace("{init}", contextInit).replace("{package}", JavaConfigConstant.JAVA_PACKAGE);
+
+        directory = path + JavaConfigConstant.JAVA_PACKAGE.replace(".", "/");
+        new File(directory).mkdirs();
+        Files.write(
+                Paths.get(new File(directory + "/TLApiContext.java").toURI()),
+                generatedFile.getBytes(Charset.forName("utf-8")),
+                StandardOpenOption.CREATE
+        );
     }
 }

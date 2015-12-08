@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.payway.telegram.api</groupId>
-    <artifactId>payway-telegram-api-tl-schema-generator</artifactId>
+    <artifactId>payway-telegram-api-mtproto</artifactId>
     <packaging>jar</packaging>
-    <name>payway-telegram-api-tl-schema-generator</name>
+    <name>payway-telegram-api-mtproto</name>
     <version>1.0-SNAPSHOT</version>
         
     <parent>
@@ -15,14 +15,4 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     
-    <dependencies>
-        <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-joda</artifactId>
-        </dependency>                
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>    
-    </dependencies>
 </project>
