@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLSentEncryptedMessage extends TLAbstractSentEncryptedMessage { 
 
-public static final int CLASS_ID = 1443858741;
+public static final int CLASS_ID = 0x560f8935;
 
 
 public TLSentEncryptedMessage() {}
@@ -33,6 +33,6 @@ this.date = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.sentEncryptedMessage#1443858741";
+return "messages.sentEncryptedMessage#560f8935";
 }
 }

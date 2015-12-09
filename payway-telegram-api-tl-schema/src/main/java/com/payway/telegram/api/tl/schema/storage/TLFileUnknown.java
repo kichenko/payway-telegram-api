@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLFileUnknown extends TLAbstractFileType { 
 
-public static final int CLASS_ID = -1432995067;
+public static final int CLASS_ID = 0xaa963b05;
 
 
 public TLFileUnknown() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "storage.fileUnknown#-1432995067";
+return "storage.fileUnknown#aa963b05";
 }
 }

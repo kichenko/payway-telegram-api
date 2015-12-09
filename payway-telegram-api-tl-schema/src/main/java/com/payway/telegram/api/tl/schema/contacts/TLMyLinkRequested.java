@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMyLinkRequested extends TLAbstractMyLink { 
 
-public static final int CLASS_ID = 1818882030;
+public static final int CLASS_ID = 0x6c69efee;
 
 protected boolean contact;
 
@@ -42,6 +42,6 @@ this.contact = readTLBool(stream);
 
 @Override
 public String toString() {
-return "contacts.myLinkRequested#1818882030";
+return "contacts.myLinkRequested#6c69efee";
 }
 }

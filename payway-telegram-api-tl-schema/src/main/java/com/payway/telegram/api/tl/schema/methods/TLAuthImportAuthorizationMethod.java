@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAuthImportAuthorizationMethod extends TLMethod<com.payway.telegram.api.tl.schema.auth.TLAuthorization> {
 
-public static final int CLASS_ID = -470837741;
+public static final int CLASS_ID = 0xe3ef9613;
 
 protected int id;
 protected TLBytes bytes;
@@ -59,6 +59,6 @@ this.bytes = readTLBytes(stream, context);
 
 @Override
 public String toString() {
-return "auth.importAuthorization#-470837741";
+return "auth.importAuthorization#e3ef9613";
 }
 }

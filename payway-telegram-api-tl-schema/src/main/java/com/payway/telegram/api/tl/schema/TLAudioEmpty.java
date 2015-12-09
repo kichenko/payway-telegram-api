@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAudioEmpty extends TLAbstractAudio { 
 
-public static final int CLASS_ID = 1483311320;
+public static final int CLASS_ID = 0x586988d8;
 
 
 public TLAudioEmpty() {}
@@ -33,6 +33,6 @@ this.id = readLong(stream);
 
 @Override
 public String toString() {
-return "audioEmpty#1483311320";
+return "audioEmpty#586988d8";
 }
 }

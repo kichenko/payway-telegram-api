@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLExportedAuthorization extends TLObject {
 
-public static final int CLASS_ID = -543777747;
+public static final int CLASS_ID = 0xdf969c2d;
 
 protected int id;
 protected TLBytes bytes;
@@ -54,6 +54,6 @@ this.bytes = readTLBytes(stream, context);
 
 @Override
 public String toString() {
-return "auth.exportedAuthorization#-543777747";
+return "auth.exportedAuthorization#df969c2d";
 }
 }

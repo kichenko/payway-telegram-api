@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputNotifyChats extends TLAbstractInputNotifyPeer { 
 
-public static final int CLASS_ID = 1251338318;
+public static final int CLASS_ID = 0x4a95e84e;
 
 
 public TLInputNotifyChats() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "inputNotifyChats#1251338318";
+return "inputNotifyChats#4a95e84e";
 }
 }

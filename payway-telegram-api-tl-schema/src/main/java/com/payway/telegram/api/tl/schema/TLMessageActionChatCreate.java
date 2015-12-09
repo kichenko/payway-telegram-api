@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageActionChatCreate extends TLAbstractMessageAction { 
 
-public static final int CLASS_ID = -1503425638;
+public static final int CLASS_ID = 0xa6638b9a;
 
 protected String title;
 protected com.payway.telegram.api.tl.core.TLIntVector users;
@@ -54,6 +54,6 @@ this.users = readTLIntVector(stream, context);
 
 @Override
 public String toString() {
-return "messageActionChatCreate#-1503425638";
+return "messageActionChatCreate#a6638b9a";
 }
 }

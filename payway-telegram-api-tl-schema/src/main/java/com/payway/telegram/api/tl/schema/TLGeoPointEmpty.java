@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLGeoPointEmpty extends TLAbstractGeoPoint { 
 
-public static final int CLASS_ID = 286776671;
+public static final int CLASS_ID = 0x1117dd5f;
 
 
 public TLGeoPointEmpty() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "geoPointEmpty#286776671";
+return "geoPointEmpty#1117dd5f";
 }
 }

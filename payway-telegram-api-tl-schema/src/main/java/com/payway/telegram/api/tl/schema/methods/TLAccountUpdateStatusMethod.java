@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAccountUpdateStatusMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = 1713919532;
+public static final int CLASS_ID = 0x6628562c;
 
 protected boolean offline;
 
@@ -47,6 +47,6 @@ this.offline = readTLBool(stream);
 
 @Override
 public String toString() {
-return "account.updateStatus#1713919532";
+return "account.updateStatus#6628562c";
 }
 }

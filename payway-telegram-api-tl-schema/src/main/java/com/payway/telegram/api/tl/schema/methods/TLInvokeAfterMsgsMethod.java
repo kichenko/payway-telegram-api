@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInvokeAfterMsgsMethod extends TLMethod<TLObject> {
 
-public static final int CLASS_ID = 1036301552;
+public static final int CLASS_ID = 0x3dc4b4f0;
 
 protected com.payway.telegram.api.tl.core.TLLongVector msgIds;
 protected TLMethod query;
@@ -56,6 +56,6 @@ this.query = readTLMethod(stream, context);
 
 @Override
 public String toString() {
-return "invokeAfterMsgs#1036301552";
+return "invokeAfterMsgs#3dc4b4f0";
 }
 }

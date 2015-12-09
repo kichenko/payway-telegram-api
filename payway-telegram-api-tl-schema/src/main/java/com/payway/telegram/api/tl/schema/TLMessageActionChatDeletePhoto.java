@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageActionChatDeletePhoto extends TLAbstractMessageAction { 
 
-public static final int CLASS_ID = -1780220945;
+public static final int CLASS_ID = 0x95e3fbef;
 
 
 public TLMessageActionChatDeletePhoto() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "messageActionChatDeletePhoto#-1780220945";
+return "messageActionChatDeletePhoto#95e3fbef";
 }
 }

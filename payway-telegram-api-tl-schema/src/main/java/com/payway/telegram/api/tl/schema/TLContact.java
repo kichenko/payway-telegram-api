@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContact extends TLObject {
 
-public static final int CLASS_ID = -116274796;
+public static final int CLASS_ID = 0xf911c994;
 
 protected int userId;
 protected boolean mutual;
@@ -54,6 +54,6 @@ this.mutual = readTLBool(stream);
 
 @Override
 public String toString() {
-return "contact#-116274796";
+return "contact#f911c994";
 }
 }

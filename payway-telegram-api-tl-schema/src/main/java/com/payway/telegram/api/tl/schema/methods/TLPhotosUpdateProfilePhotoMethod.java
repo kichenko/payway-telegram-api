@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLPhotosUpdateProfilePhotoMethod extends TLMethod<com.payway.telegram.api.tl.schema.TLAbstractUserProfilePhoto> {
 
-public static final int CLASS_ID = -285902432;
+public static final int CLASS_ID = 0xeef579a0;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPhoto id;
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPhotoCrop crop;
@@ -59,6 +59,6 @@ this.crop = (com.payway.telegram.api.tl.schema.TLAbstractInputPhotoCrop)readTLOb
 
 @Override
 public String toString() {
-return "photos.updateProfilePhoto#-285902432";
+return "photos.updateProfilePhoto#eef579a0";
 }
 }

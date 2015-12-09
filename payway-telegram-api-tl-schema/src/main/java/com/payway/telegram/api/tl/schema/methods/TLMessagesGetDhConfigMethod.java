@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesGetDhConfigMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractDhConfig> {
 
-public static final int CLASS_ID = 651135312;
+public static final int CLASS_ID = 0x26cf8950;
 
 protected int version;
 protected int randomLength;
@@ -59,6 +59,6 @@ this.randomLength = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.getDhConfig#651135312";
+return "messages.getDhConfig#26cf8950";
 }
 }

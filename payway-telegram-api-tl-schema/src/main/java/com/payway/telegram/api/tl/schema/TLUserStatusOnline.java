@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUserStatusOnline extends TLAbstractUserStatus { 
 
-public static final int CLASS_ID = -306628279;
+public static final int CLASS_ID = 0xedb93949;
 
 protected int expires;
 
@@ -42,6 +42,6 @@ this.expires = readInt(stream);
 
 @Override
 public String toString() {
-return "userStatusOnline#-306628279";
+return "userStatusOnline#edb93949";
 }
 }

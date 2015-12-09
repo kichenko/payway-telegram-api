@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLSuggested extends TLObject {
 
-public static final int CLASS_ID = 1447681221;
+public static final int CLASS_ID = 0x5649dcc5;
 
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLContactSuggested> results;
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractUser> users;
@@ -54,6 +54,6 @@ this.users = readTLVector(stream, context);
 
 @Override
 public String toString() {
-return "contacts.suggested#1447681221";
+return "contacts.suggested#5649dcc5";
 }
 }

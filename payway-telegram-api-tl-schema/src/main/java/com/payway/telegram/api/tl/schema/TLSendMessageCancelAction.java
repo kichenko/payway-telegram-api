@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLSendMessageCancelAction extends TLAbstractSendMessageAction { 
 
-public static final int CLASS_ID = -44119819;
+public static final int CLASS_ID = 0xfd5ec8f5;
 
 
 public TLSendMessageCancelAction() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "sendMessageCancelAction#-44119819";
+return "sendMessageCancelAction#fd5ec8f5";
 }
 }

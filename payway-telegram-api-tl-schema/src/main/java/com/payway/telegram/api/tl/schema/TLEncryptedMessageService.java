@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLEncryptedMessageService extends TLAbstractEncryptedMessage { 
 
-public static final int CLASS_ID = 594758406;
+public static final int CLASS_ID = 0x23734b06;
 
 
 public TLEncryptedMessageService() {}
@@ -42,6 +42,6 @@ this.bytes = readTLBytes(stream, context);
 
 @Override
 public String toString() {
-return "encryptedMessageService#594758406";
+return "encryptedMessageService#23734b06";
 }
 }

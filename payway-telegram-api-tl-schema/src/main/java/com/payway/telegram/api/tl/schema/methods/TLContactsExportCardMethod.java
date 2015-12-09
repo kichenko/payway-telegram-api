@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactsExportCardMethod extends TLMethod<com.payway.telegram.api.tl.core.TLIntVector> {
 
-public static final int CLASS_ID = -2065352905;
+public static final int CLASS_ID = 0x84e53737;
 
 
 public TLContactsExportCardMethod () {
@@ -26,6 +26,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "contacts.exportCard#-2065352905";
+return "contacts.exportCard#84e53737";
 }
 }

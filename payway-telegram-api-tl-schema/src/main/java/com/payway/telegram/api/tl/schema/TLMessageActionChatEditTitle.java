@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageActionChatEditTitle extends TLAbstractMessageAction { 
 
-public static final int CLASS_ID = -1247687078;
+public static final int CLASS_ID = 0xb5a1ce5a;
 
 protected String title;
 
@@ -42,6 +42,6 @@ this.title = readTLString(stream);
 
 @Override
 public String toString() {
-return "messageActionChatEditTitle#-1247687078";
+return "messageActionChatEditTitle#b5a1ce5a";
 }
 }

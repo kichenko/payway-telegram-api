@@ -542,11 +542,11 @@ public final class TLJavaModel {
                 generatedFile = generatedFile
                         .replace("{name}", t.getJavaTypeName())
                         .replace("{package}", t.getJavaPackage())
-                        .replace("{class_id}", Integer.toString(t.getConstructors().get(0).getTlConstructor().getId()))
+                        .replace("{class_id}", "0x" + Integer.toHexString(t.getConstructors().get(0).getTlConstructor().getId()))
                         .replace("{to_string}",
                                 JavaTemplate.JAVA_TO_STRING_TEMPLATE.replace("{value}", t.getConstructors().get(0).getTlConstructor().getName()
                                         + "#"
-                                        + Integer.toString(t.getConstructors().get(0).getTlConstructor().getId())));
+                                        + Integer.toHexString(t.getConstructors().get(0).getTlConstructor().getId())));
 
                 fields = "";
                 for (final JavaParameter p : t.getConstructors().get(0).getParameters()) {
@@ -643,11 +643,11 @@ public final class TLJavaModel {
                             .replace("{name}", constr.javaClassName)
                             .replace("{base-name}", t.javaTypeName)
                             .replace("{package}", t.javaPackage)
-                            .replace("{class_id}", Integer.toString(constr.getTlConstructor().getId()))
+                            .replace("{class_id}", "0x" + Integer.toHexString(constr.getTlConstructor().getId()))
                             .replace("{to_string}",
                                     JavaTemplate.JAVA_TO_STRING_TEMPLATE.replace(
                                             "{value}",
-                                            constr.getTlConstructor().getName() + "#" + Integer.toString(constr.getTlConstructor().getId())
+                                            constr.getTlConstructor().getName() + "#" + Integer.toHexString(constr.getTlConstructor().getId())
                                     ));
 
                     fields = "";
@@ -747,10 +747,10 @@ public final class TLJavaModel {
             generatedFile = generatedFile
                     .replace("{name}", m.getRequestClassName())
                     .replace("{package}", JavaConfigConstant.JAVA_PACKAGE + "." + JavaConfigConstant.JAVA_METHOD_PACKAGE)
-                    .replace("{class_id}", Integer.toString(m.getTlMethod().getId()))
+                    .replace("{class_id}", "0x" + Integer.toHexString(m.getTlMethod().getId()))
                     .replace("{return_type}", returnTypeName)
                     .replace("{to_string}",
-                            JavaTemplate.JAVA_TO_STRING_TEMPLATE.replace("{value}", m.getTlMethod().getName() + "#" + Integer.toString(m.getTlMethod().getId())));
+                            JavaTemplate.JAVA_TO_STRING_TEMPLATE.replace("{value}", m.getTlMethod().getName() + "#" + Integer.toHexString(m.getTlMethod().getId())));
 
             fields = "";
             for (final JavaParameter p : m.getParameters()) {
@@ -912,12 +912,12 @@ public final class TLJavaModel {
             if (t.getConstructors().size() == 1 && !TLConstant.IGNORED_TYPES.contains(t.getTlType().getName())) {
                 contextInit += JavaTemplate.JAVA_CONTEXT_INT_RECORD
                         .replace("{type}", t.getJavaPackage() + "." + t.getJavaTypeName())
-                        .replace("{id}", Integer.toString(t.getConstructors().get(0).getTlConstructor().getId()));
+                        .replace("{id}", "0x" + Integer.toHexString(t.getConstructors().get(0).getTlConstructor().getId()));
             } else {
                 for (final JavaTypeConstructor c : t.getConstructors()) {
                     contextInit += JavaTemplate.JAVA_CONTEXT_INT_RECORD
                             .replace("{type}", t.getJavaPackage() + "." + c.getJavaClassName())
-                            .replace("{id}", Integer.toString(c.getTlConstructor().getId()));
+                            .replace("{id}", "0x" + Integer.toHexString(c.getTlConstructor().getId()));
                 }
             }
         }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLHelpGetNearestDcMethod extends TLMethod<com.payway.telegram.api.tl.schema.TLNearestDc> {
 
-public static final int CLASS_ID = 531836966;
+public static final int CLASS_ID = 0x1fb33026;
 
 
 public TLHelpGetNearestDcMethod () {
@@ -29,6 +29,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "help.getNearestDc#531836966";
+return "help.getNearestDc#1fb33026";
 }
 }

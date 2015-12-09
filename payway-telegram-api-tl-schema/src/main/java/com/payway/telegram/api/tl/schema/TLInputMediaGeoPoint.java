@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputMediaGeoPoint extends TLAbstractInputMedia { 
 
-public static final int CLASS_ID = -104578748;
+public static final int CLASS_ID = 0xf9c44144;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputGeoPoint geoPoint;
 
@@ -42,6 +42,6 @@ this.geoPoint = (com.payway.telegram.api.tl.schema.TLAbstractInputGeoPoint)readT
 
 @Override
 public String toString() {
-return "inputMediaGeoPoint#-104578748";
+return "inputMediaGeoPoint#f9c44144";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputMessagesFilterDocument extends TLAbstractMessagesFilter { 
 
-public static final int CLASS_ID = -1629621880;
+public static final int CLASS_ID = 0x9eddf188;
 
 
 public TLInputMessagesFilterDocument() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "inputMessagesFilterDocument#-1629621880";
+return "inputMessagesFilterDocument#9eddf188";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUploadSaveBigFilePartMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = -562337987;
+public static final int CLASS_ID = 0xde7b673d;
 
 protected long fileId;
 protected int filePart;
@@ -83,6 +83,6 @@ this.bytes = readTLBytes(stream, context);
 
 @Override
 public String toString() {
-return "upload.saveBigFilePart#-562337987";
+return "upload.saveBigFilePart#de7b673d";
 }
 }

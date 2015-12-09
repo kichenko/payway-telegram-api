@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputMediaEmpty extends TLAbstractInputMedia { 
 
-public static final int CLASS_ID = -1771768449;
+public static final int CLASS_ID = 0x9664f57f;
 
 
 public TLInputMediaEmpty() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "inputMediaEmpty#-1771768449";
+return "inputMediaEmpty#9664f57f";
 }
 }

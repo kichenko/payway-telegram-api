@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAuthSignUpMethod extends TLMethod<com.payway.telegram.api.tl.schema.auth.TLAuthorization> {
 
-public static final int CLASS_ID = 453408308;
+public static final int CLASS_ID = 0x1b067634;
 
 protected String phoneNumber;
 protected String phoneCodeHash;
@@ -95,6 +95,6 @@ this.lastName = readTLString(stream);
 
 @Override
 public String toString() {
-return "auth.signUp#453408308";
+return "auth.signUp#1b067634";
 }
 }

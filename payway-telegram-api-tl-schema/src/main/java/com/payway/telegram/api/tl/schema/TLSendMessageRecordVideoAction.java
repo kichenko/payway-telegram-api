@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLSendMessageRecordVideoAction extends TLAbstractSendMessageAction { 
 
-public static final int CLASS_ID = -1584933265;
+public static final int CLASS_ID = 0xa187d66f;
 
 
 public TLSendMessageRecordVideoAction() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "sendMessageRecordVideoAction#-1584933265";
+return "sendMessageRecordVideoAction#a187d66f";
 }
 }

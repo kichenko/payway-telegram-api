@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLTrue extends TLObject {
 
-public static final int CLASS_ID = 1072550713;
+public static final int CLASS_ID = 0x3fedd339;
 
 
 public TLTrue() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "true#1072550713";
+return "true#3fedd339";
 }
 }

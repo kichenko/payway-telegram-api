@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUserStatusOffline extends TLAbstractUserStatus { 
 
-public static final int CLASS_ID = 9203775;
+public static final int CLASS_ID = 0x8c703f;
 
 protected int wasOnline;
 
@@ -42,6 +42,6 @@ this.wasOnline = readInt(stream);
 
 @Override
 public String toString() {
-return "userStatusOffline#9203775";
+return "userStatusOffline#8c703f";
 }
 }

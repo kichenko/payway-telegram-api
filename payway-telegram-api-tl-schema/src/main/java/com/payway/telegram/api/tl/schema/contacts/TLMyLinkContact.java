@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMyLinkContact extends TLAbstractMyLink { 
 
-public static final int CLASS_ID = -1035932711;
+public static final int CLASS_ID = 0xc240ebd9;
 
 
 public TLMyLinkContact() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "contacts.myLinkContact#-1035932711";
+return "contacts.myLinkContact#c240ebd9";
 }
 }

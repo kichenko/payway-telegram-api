@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLChatParticipant extends TLObject {
 
-public static final int CLASS_ID = -925415106;
+public static final int CLASS_ID = 0xc8d7493e;
 
 protected int userId;
 protected int inviterId;
@@ -66,6 +66,6 @@ this.date = readInt(stream);
 
 @Override
 public String toString() {
-return "chatParticipant#-925415106";
+return "chatParticipant#c8d7493e";
 }
 }

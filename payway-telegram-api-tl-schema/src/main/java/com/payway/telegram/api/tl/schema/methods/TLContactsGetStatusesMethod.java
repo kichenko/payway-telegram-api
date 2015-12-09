@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactsGetStatusesMethod extends TLMethod<com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLContactStatus>> {
 
-public static final int CLASS_ID = -995929106;
+public static final int CLASS_ID = 0xc4a353ee;
 
 
 public TLContactsGetStatusesMethod () {
@@ -26,6 +26,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "contacts.getStatuses#-995929106";
+return "contacts.getStatuses#c4a353ee";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLEncryptedChatEmpty extends TLAbstractEncryptedChat { 
 
-public static final int CLASS_ID = -1417756512;
+public static final int CLASS_ID = 0xab7ec0a0;
 
 
 public TLEncryptedChatEmpty() {}
@@ -33,6 +33,6 @@ this.id = readInt(stream);
 
 @Override
 public String toString() {
-return "encryptedChatEmpty#-1417756512";
+return "encryptedChatEmpty#ab7ec0a0";
 }
 }

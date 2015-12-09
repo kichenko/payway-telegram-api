@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateNewEncryptedMessage extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = 314359194;
+public static final int CLASS_ID = 0x12bcbd9a;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractEncryptedMessage message;
 protected int qts;
@@ -54,6 +54,6 @@ this.qts = readInt(stream);
 
 @Override
 public String toString() {
-return "updateNewEncryptedMessage#314359194";
+return "updateNewEncryptedMessage#12bcbd9a";
 }
 }

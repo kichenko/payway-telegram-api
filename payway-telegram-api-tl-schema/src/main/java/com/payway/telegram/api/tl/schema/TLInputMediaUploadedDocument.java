@@ -8,18 +8,18 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputMediaUploadedDocument extends TLAbstractInputMedia { 
 
-public static final int CLASS_ID = 887592125;
+public static final int CLASS_ID = 0xffe76b78;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputFile file;
-protected String fileName;
 protected String mimeType;
+protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractDocumentAttribute> attributes;
 
 public TLInputMediaUploadedDocument() {}
 
-public TLInputMediaUploadedDocument (com.payway.telegram.api.tl.schema.TLAbstractInputFile file, String fileName, String mimeType) {
+public TLInputMediaUploadedDocument (com.payway.telegram.api.tl.schema.TLAbstractInputFile file, String mimeType, com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractDocumentAttribute> attributes) {
 this.file = file;
-this.fileName = fileName;
 this.mimeType = mimeType;
+this.attributes = attributes;
 }
 
 public int getClassId() {
@@ -33,14 +33,6 @@ public void setFile(com.payway.telegram.api.tl.schema.TLAbstractInputFile value)
 this.file = value;
 }
 
-public String getFileName() {
-return fileName;
-}
-
-public void setFileName(String value) {
-this.fileName = value;
-}
-
 public String getMimeType() {
 return mimeType;
 }
@@ -49,23 +41,31 @@ public void setMimeType(String value) {
 this.mimeType = value;
 }
 
+public com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractDocumentAttribute> getAttributes() {
+return attributes;
+}
+
+public void setAttributes(com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractDocumentAttribute> value) {
+this.attributes = value;
+}
+
 
 @Override
 public void serializeBody(OutputStream stream) throws IOException {
 writeTLObject(this.file, stream);
-writeTLString(this.fileName, stream);
 writeTLString(this.mimeType, stream);
+writeTLVector(this.attributes, stream);
 }
 
 @Override
 public void deserializeBody(InputStream stream, TLContext context) throws IOException {
 this.file = (com.payway.telegram.api.tl.schema.TLAbstractInputFile)readTLObject(stream, context);
-this.fileName = readTLString(stream);
 this.mimeType = readTLString(stream);
+this.attributes = readTLVector(stream, context);
 }
 
 @Override
 public String toString() {
-return "inputMediaUploadedDocument#887592125";
+return "inputMediaUploadedDocument#ffe76b78";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputEncryptedFileBigUploaded extends TLAbstractInputEncryptedFile { 
 
-public static final int CLASS_ID = 767652808;
+public static final int CLASS_ID = 0x2dc173c8;
 
 protected long id;
 protected int parts;
@@ -66,6 +66,6 @@ this.keyFingerprint = readInt(stream);
 
 @Override
 public String toString() {
-return "inputEncryptedFileBigUploaded#767652808";
+return "inputEncryptedFileBigUploaded#2dc173c8";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesSendEncryptedFileMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractSentEncryptedMessage> {
 
-public static final int CLASS_ID = -1701831834;
+public static final int CLASS_ID = 0x9a901b66;
 
 protected com.payway.telegram.api.tl.schema.TLInputEncryptedChat peer;
 protected long randomId;
@@ -83,6 +83,6 @@ this.file = (com.payway.telegram.api.tl.schema.TLAbstractInputEncryptedFile)read
 
 @Override
 public String toString() {
-return "messages.sendEncryptedFile#-1701831834";
+return "messages.sendEncryptedFile#9a901b66";
 }
 }

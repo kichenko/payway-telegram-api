@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAccountGetNotifySettingsMethod extends TLMethod<com.payway.telegram.api.tl.schema.TLAbstractPeerNotifySettings> {
 
-public static final int CLASS_ID = 313765169;
+public static final int CLASS_ID = 0x12b3ad31;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputNotifyPeer peer;
 
@@ -47,6 +47,6 @@ this.peer = (com.payway.telegram.api.tl.schema.TLAbstractInputNotifyPeer)readTLO
 
 @Override
 public String toString() {
-return "account.getNotifySettings#313765169";
+return "account.getNotifySettings#12b3ad31";
 }
 }

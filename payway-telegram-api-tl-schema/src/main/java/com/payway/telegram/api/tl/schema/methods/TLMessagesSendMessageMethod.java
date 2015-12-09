@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesSendMessageMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractSentMessage> {
 
-public static final int CLASS_ID = 1289620139;
+public static final int CLASS_ID = 0x4cde0aab;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPeer peer;
 protected String message;
@@ -71,6 +71,6 @@ this.randomId = readLong(stream);
 
 @Override
 public String toString() {
-return "messages.sendMessage#1289620139";
+return "messages.sendMessage#4cde0aab";
 }
 }

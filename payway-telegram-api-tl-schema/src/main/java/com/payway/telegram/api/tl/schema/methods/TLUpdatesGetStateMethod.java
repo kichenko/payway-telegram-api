@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdatesGetStateMethod extends TLMethod<com.payway.telegram.api.tl.schema.updates.TLState> {
 
-public static final int CLASS_ID = -304838614;
+public static final int CLASS_ID = 0xedd4882a;
 
 
 public TLUpdatesGetStateMethod () {
@@ -29,6 +29,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "updates.getState#-304838614";
+return "updates.getState#edd4882a";
 }
 }

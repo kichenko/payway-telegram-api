@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesDeleteMessagesMethod extends TLMethod<com.payway.telegram.api.tl.core.TLIntVector> {
 
-public static final int CLASS_ID = 351460618;
+public static final int CLASS_ID = 0x14f2dd0a;
 
 protected com.payway.telegram.api.tl.core.TLIntVector id;
 
@@ -44,6 +44,6 @@ this.id = readTLIntVector(stream, context);
 
 @Override
 public String toString() {
-return "messages.deleteMessages#351460618";
+return "messages.deleteMessages#14f2dd0a";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLHelpSaveAppLogMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = 1862465352;
+public static final int CLASS_ID = 0x6f02f748;
 
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLInputAppEvent> events;
 
@@ -47,6 +47,6 @@ this.events = readTLVector(stream, context);
 
 @Override
 public String toString() {
-return "help.saveAppLog#1862465352";
+return "help.saveAppLog#6f02f748";
 }
 }

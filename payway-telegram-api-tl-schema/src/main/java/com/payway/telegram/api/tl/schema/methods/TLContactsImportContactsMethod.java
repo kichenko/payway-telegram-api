@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactsImportContactsMethod extends TLMethod<com.payway.telegram.api.tl.schema.contacts.TLImportedContacts> {
 
-public static final int CLASS_ID = -634342611;
+public static final int CLASS_ID = 0xda30b32d;
 
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLInputContact> contacts;
 protected boolean replace;
@@ -59,6 +59,6 @@ this.replace = readTLBool(stream);
 
 @Override
 public String toString() {
-return "contacts.importContacts#-634342611";
+return "contacts.importContacts#da30b32d";
 }
 }

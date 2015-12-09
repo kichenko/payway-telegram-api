@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLHelpGetAppUpdateMethod extends TLMethod<com.payway.telegram.api.tl.schema.help.TLAbstractAppUpdate> {
 
-public static final int CLASS_ID = -938300290;
+public static final int CLASS_ID = 0xc812ac7e;
 
 protected String deviceModel;
 protected String systemVersion;
@@ -83,6 +83,6 @@ this.langCode = readTLString(stream);
 
 @Override
 public String toString() {
-return "help.getAppUpdate#-938300290";
+return "help.getAppUpdate#c812ac7e";
 }
 }

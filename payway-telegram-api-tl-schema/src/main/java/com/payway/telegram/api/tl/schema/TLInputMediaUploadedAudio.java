@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputMediaUploadedAudio extends TLAbstractInputMedia { 
 
-public static final int CLASS_ID = 1313442987;
+public static final int CLASS_ID = 0x4e498cab;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputFile file;
 protected int duration;
@@ -66,6 +66,6 @@ this.mimeType = readTLString(stream);
 
 @Override
 public String toString() {
-return "inputMediaUploadedAudio#1313442987";
+return "inputMediaUploadedAudio#4e498cab";
 }
 }

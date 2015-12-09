@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactsGetContactsMethod extends TLMethod<com.payway.telegram.api.tl.schema.contacts.TLAbstractContacts> {
 
-public static final int CLASS_ID = 583445000;
+public static final int CLASS_ID = 0x22c6aa08;
 
 protected String hash;
 
@@ -47,6 +47,6 @@ this.hash = readTLString(stream);
 
 @Override
 public String toString() {
-return "contacts.getContacts#583445000";
+return "contacts.getContacts#22c6aa08";
 }
 }

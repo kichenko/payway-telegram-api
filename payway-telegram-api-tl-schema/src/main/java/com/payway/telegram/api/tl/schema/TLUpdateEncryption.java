@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateEncryption extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = -1264392051;
+public static final int CLASS_ID = 0xb4a2e88d;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractEncryptedChat chat;
 protected int date;
@@ -54,6 +54,6 @@ this.date = readInt(stream);
 
 @Override
 public String toString() {
-return "updateEncryption#-1264392051";
+return "updateEncryption#b4a2e88d";
 }
 }

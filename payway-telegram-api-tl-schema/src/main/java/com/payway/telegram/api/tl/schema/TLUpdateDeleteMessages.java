@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateDeleteMessages extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = -1456734682;
+public static final int CLASS_ID = 0xa92bfe26;
 
 protected com.payway.telegram.api.tl.core.TLIntVector messages;
 protected int pts;
@@ -54,6 +54,6 @@ this.pts = readInt(stream);
 
 @Override
 public String toString() {
-return "updateDeleteMessages#-1456734682";
+return "updateDeleteMessages#a92bfe26";
 }
 }

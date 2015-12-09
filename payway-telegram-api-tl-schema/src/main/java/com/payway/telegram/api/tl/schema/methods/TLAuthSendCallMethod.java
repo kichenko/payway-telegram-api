@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAuthSendCallMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = 63247716;
+public static final int CLASS_ID = 0x3c51564;
 
 protected String phoneNumber;
 protected String phoneCodeHash;
@@ -59,6 +59,6 @@ this.phoneCodeHash = readTLString(stream);
 
 @Override
 public String toString() {
-return "auth.sendCall#63247716";
+return "auth.sendCall#3c51564";
 }
 }

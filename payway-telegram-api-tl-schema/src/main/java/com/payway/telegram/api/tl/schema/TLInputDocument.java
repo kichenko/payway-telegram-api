@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputDocument extends TLAbstractInputDocument { 
 
-public static final int CLASS_ID = 410618194;
+public static final int CLASS_ID = 0x18798952;
 
 protected long id;
 protected long accessHash;
@@ -54,6 +54,6 @@ this.accessHash = readLong(stream);
 
 @Override
 public String toString() {
-return "inputDocument#410618194";
+return "inputDocument#18798952";
 }
 }

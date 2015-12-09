@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLDifferenceSlice extends TLAbstractDifference { 
 
-public static final int CLASS_ID = -1459938943;
+public static final int CLASS_ID = 0xa8fb1981;
 
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractMessage> newMessages;
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractEncryptedMessage> newEncryptedMessages;
@@ -102,6 +102,6 @@ this.intermediateState = (com.payway.telegram.api.tl.schema.updates.TLState)read
 
 @Override
 public String toString() {
-return "updates.differenceSlice#-1459938943";
+return "updates.differenceSlice#a8fb1981";
 }
 }

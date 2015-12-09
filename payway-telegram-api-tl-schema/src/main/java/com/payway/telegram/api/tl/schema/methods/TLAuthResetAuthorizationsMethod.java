@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAuthResetAuthorizationsMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = -1616179942;
+public static final int CLASS_ID = 0x9fab0d1a;
 
 
 public TLAuthResetAuthorizationsMethod () {
@@ -29,6 +29,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "auth.resetAuthorizations#-1616179942";
+return "auth.resetAuthorizations#9fab0d1a";
 }
 }

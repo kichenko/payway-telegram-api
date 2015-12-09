@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAccountUpdateProfileMethod extends TLMethod<com.payway.telegram.api.tl.schema.TLAbstractUser> {
 
-public static final int CLASS_ID = -259486360;
+public static final int CLASS_ID = 0xf0888d68;
 
 protected String firstName;
 protected String lastName;
@@ -59,6 +59,6 @@ this.lastName = readTLString(stream);
 
 @Override
 public String toString() {
-return "account.updateProfile#-259486360";
+return "account.updateProfile#f0888d68";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageActionChatAddUser extends TLAbstractMessageAction { 
 
-public static final int CLASS_ID = 1581055051;
+public static final int CLASS_ID = 0x5e3cfc4b;
 
 protected int userId;
 
@@ -42,6 +42,6 @@ this.userId = readInt(stream);
 
 @Override
 public String toString() {
-return "messageActionChatAddUser#1581055051";
+return "messageActionChatAddUser#5e3cfc4b";
 }
 }

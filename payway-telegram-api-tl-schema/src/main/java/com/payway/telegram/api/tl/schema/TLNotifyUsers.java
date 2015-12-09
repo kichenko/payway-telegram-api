@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLNotifyUsers extends TLAbstractNotifyPeer { 
 
-public static final int CLASS_ID = -1261946036;
+public static final int CLASS_ID = 0xb4c83b4c;
 
 
 public TLNotifyUsers() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "notifyUsers#-1261946036";
+return "notifyUsers#b4c83b4c";
 }
 }

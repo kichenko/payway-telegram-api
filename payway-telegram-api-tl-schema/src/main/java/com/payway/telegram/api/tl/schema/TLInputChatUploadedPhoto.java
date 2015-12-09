@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputChatUploadedPhoto extends TLAbstractInputChatPhoto { 
 
-public static final int CLASS_ID = -1809496270;
+public static final int CLASS_ID = 0x94254732;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputFile file;
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPhotoCrop crop;
@@ -54,6 +54,6 @@ this.crop = (com.payway.telegram.api.tl.schema.TLAbstractInputPhotoCrop)readTLOb
 
 @Override
 public String toString() {
-return "inputChatUploadedPhoto#-1809496270";
+return "inputChatUploadedPhoto#94254732";
 }
 }

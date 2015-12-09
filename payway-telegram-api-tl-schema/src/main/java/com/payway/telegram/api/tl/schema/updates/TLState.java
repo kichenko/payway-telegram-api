@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLState extends TLObject {
 
-public static final int CLASS_ID = -1519637954;
+public static final int CLASS_ID = 0xa56c2a3e;
 
 protected int pts;
 protected int qts;
@@ -90,6 +90,6 @@ this.unreadCount = readInt(stream);
 
 @Override
 public String toString() {
-return "updates.state#-1519637954";
+return "updates.state#a56c2a3e";
 }
 }

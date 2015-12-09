@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageMediaUnsupported extends TLAbstractMessageMedia { 
 
-public static final int CLASS_ID = 694364726;
+public static final int CLASS_ID = 0x29632a36;
 
 protected TLBytes bytes;
 
@@ -42,6 +42,6 @@ this.bytes = readTLBytes(stream, context);
 
 @Override
 public String toString() {
-return "messageMediaUnsupported#694364726";
+return "messageMediaUnsupported#29632a36";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactsDeleteContactsMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = 1504393374;
+public static final int CLASS_ID = 0x59ab389e;
 
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractInputUser> id;
 
@@ -47,6 +47,6 @@ this.id = readTLVector(stream, context);
 
 @Override
 public String toString() {
-return "contacts.deleteContacts#1504393374";
+return "contacts.deleteContacts#59ab389e";
 }
 }

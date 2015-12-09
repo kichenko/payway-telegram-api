@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesSendMediaMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractStatedMessage> {
 
-public static final int CLASS_ID = -1547149962;
+public static final int CLASS_ID = 0xa3c85d76;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPeer peer;
 protected com.payway.telegram.api.tl.schema.TLAbstractInputMedia media;
@@ -71,6 +71,6 @@ this.randomId = readLong(stream);
 
 @Override
 public String toString() {
-return "messages.sendMedia#-1547149962";
+return "messages.sendMedia#a3c85d76";
 }
 }

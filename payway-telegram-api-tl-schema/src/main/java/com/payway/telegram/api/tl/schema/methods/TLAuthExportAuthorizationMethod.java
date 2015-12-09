@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAuthExportAuthorizationMethod extends TLMethod<com.payway.telegram.api.tl.schema.auth.TLExportedAuthorization> {
 
-public static final int CLASS_ID = -440401971;
+public static final int CLASS_ID = 0xe5bfffcd;
 
 protected int dcId;
 
@@ -47,6 +47,6 @@ this.dcId = readInt(stream);
 
 @Override
 public String toString() {
-return "auth.exportAuthorization#-440401971";
+return "auth.exportAuthorization#e5bfffcd";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdates extends TLAbstractUpdates { 
 
-public static final int CLASS_ID = 1957577280;
+public static final int CLASS_ID = 0x74ae4240;
 
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractUpdate> updates;
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractUser> users;
@@ -90,6 +90,6 @@ this.seq = readInt(stream);
 
 @Override
 public String toString() {
-return "updates#1957577280";
+return "updates#74ae4240";
 }
 }

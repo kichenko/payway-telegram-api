@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputUserSelf extends TLAbstractInputUser { 
 
-public static final int CLASS_ID = -138301121;
+public static final int CLASS_ID = 0xf7c1b13f;
 
 
 public TLInputUserSelf() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "inputUserSelf#-138301121";
+return "inputUserSelf#f7c1b13f";
 }
 }

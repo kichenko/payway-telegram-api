@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUserDeleted extends TLAbstractUser { 
 
-public static final int CLASS_ID = -704549510;
+public static final int CLASS_ID = 0xd6016d7a;
 
 protected String firstName;
 protected String lastName;
@@ -69,6 +69,6 @@ this.username = readTLString(stream);
 
 @Override
 public String toString() {
-return "userDeleted#-704549510";
+return "userDeleted#d6016d7a";
 }
 }

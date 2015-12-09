@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLSentCode extends TLAbstractSentCode { 
 
-public static final int CLASS_ID = -269659687;
+public static final int CLASS_ID = 0xefed51d9;
 
 
 public TLSentCode() {}
@@ -42,6 +42,6 @@ this.isPassword = readTLBool(stream);
 
 @Override
 public String toString() {
-return "auth.sentCode#-269659687";
+return "auth.sentCode#efed51d9";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputFile extends TLAbstractInputFile { 
 
-public static final int CLASS_ID = -181407105;
+public static final int CLASS_ID = 0xf52ff27f;
 
 
 public TLInputFile() {}
@@ -42,6 +42,6 @@ this.md5Checksum = readTLString(stream);
 
 @Override
 public String toString() {
-return "inputFile#-181407105";
+return "inputFile#f52ff27f";
 }
 }

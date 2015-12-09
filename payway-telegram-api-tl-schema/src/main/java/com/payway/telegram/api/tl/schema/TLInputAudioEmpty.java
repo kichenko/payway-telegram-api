@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputAudioEmpty extends TLAbstractInputAudio { 
 
-public static final int CLASS_ID = -648356732;
+public static final int CLASS_ID = 0xd95adc84;
 
 
 public TLInputAudioEmpty() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "inputAudioEmpty#-648356732";
+return "inputAudioEmpty#d95adc84";
 }
 }

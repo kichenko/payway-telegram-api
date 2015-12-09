@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLPhotoSizeEmpty extends TLAbstractPhotoSize { 
 
-public static final int CLASS_ID = 236446268;
+public static final int CLASS_ID = 0xe17e23c;
 
 
 public TLPhotoSizeEmpty() {}
@@ -33,6 +33,6 @@ this.type = readTLString(stream);
 
 @Override
 public String toString() {
-return "photoSizeEmpty#236446268";
+return "photoSizeEmpty#e17e23c";
 }
 }

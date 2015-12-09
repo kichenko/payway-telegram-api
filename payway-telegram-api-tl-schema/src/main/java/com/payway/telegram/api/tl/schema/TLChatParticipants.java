@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLChatParticipants extends TLAbstractChatParticipants { 
 
-public static final int CLASS_ID = 2017571861;
+public static final int CLASS_ID = 0x7841b415;
 
 protected int adminId;
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLChatParticipant> participants;
@@ -69,6 +69,6 @@ this.version = readInt(stream);
 
 @Override
 public String toString() {
-return "chatParticipants#2017571861";
+return "chatParticipants#7841b415";
 }
 }

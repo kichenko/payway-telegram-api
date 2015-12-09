@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLChatFull extends TLObject {
 
-public static final int CLASS_ID = 1661886910;
+public static final int CLASS_ID = 0x630e61be;
 
 protected int id;
 protected com.payway.telegram.api.tl.schema.TLAbstractChatParticipants participants;
@@ -78,6 +78,6 @@ this.notifySettings = (com.payway.telegram.api.tl.schema.TLAbstractPeerNotifySet
 
 @Override
 public String toString() {
-return "chatFull#1661886910";
+return "chatFull#630e61be";
 }
 }

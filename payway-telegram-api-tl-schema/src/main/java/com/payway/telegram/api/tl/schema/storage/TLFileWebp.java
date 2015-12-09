@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLFileWebp extends TLAbstractFileType { 
 
-public static final int CLASS_ID = 276907596;
+public static final int CLASS_ID = 0x1081464c;
 
 
 public TLFileWebp() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "storage.fileWebp#276907596";
+return "storage.fileWebp#1081464c";
 }
 }

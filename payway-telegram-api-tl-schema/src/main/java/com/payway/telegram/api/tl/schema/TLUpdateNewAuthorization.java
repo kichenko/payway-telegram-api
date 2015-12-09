@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateNewAuthorization extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = -1895411046;
+public static final int CLASS_ID = 0x8f06529a;
 
 protected long authKeyId;
 protected int date;
@@ -78,6 +78,6 @@ this.location = readTLString(stream);
 
 @Override
 public String toString() {
-return "updateNewAuthorization#-1895411046";
+return "updateNewAuthorization#8f06529a";
 }
 }

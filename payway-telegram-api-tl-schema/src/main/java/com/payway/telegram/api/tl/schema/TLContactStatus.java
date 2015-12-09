@@ -8,16 +8,16 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactStatus extends TLObject {
 
-public static final int CLASS_ID = -1434994573;
+public static final int CLASS_ID = 0xd3680c61;
 
 protected int userId;
-protected int expires;
+protected com.payway.telegram.api.tl.schema.TLAbstractUserStatus status;
 
 public TLContactStatus() {}
 
-public TLContactStatus (int userId, int expires) {
+public TLContactStatus (int userId, com.payway.telegram.api.tl.schema.TLAbstractUserStatus status) {
 this.userId = userId;
-this.expires = expires;
+this.status = status;
 }
 
 public int getClassId() {
@@ -31,29 +31,29 @@ public void setUserId(int value) {
 this.userId = value;
 }
 
-public int getExpires() {
-return expires;
+public com.payway.telegram.api.tl.schema.TLAbstractUserStatus getStatus() {
+return status;
 }
 
-public void setExpires(int value) {
-this.expires = value;
+public void setStatus(com.payway.telegram.api.tl.schema.TLAbstractUserStatus value) {
+this.status = value;
 }
 
 
 @Override
 public void serializeBody(OutputStream stream) throws IOException {
 writeInt(this.userId, stream);
-writeInt(this.expires, stream);
+writeTLObject(this.status, stream);
 }
 
 @Override
 public void deserializeBody(InputStream stream, TLContext context) throws IOException {
 this.userId = readInt(stream);
-this.expires = readInt(stream);
+this.status = (com.payway.telegram.api.tl.schema.TLAbstractUserStatus)readTLObject(stream, context);
 }
 
 @Override
 public String toString() {
-return "contactStatus#-1434994573";
+return "contactStatus#d3680c61";
 }
 }

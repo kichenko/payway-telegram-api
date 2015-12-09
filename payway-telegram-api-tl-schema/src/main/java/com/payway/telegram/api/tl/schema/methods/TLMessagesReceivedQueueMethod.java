@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesReceivedQueueMethod extends TLMethod<com.payway.telegram.api.tl.core.TLLongVector> {
 
-public static final int CLASS_ID = 1436924774;
+public static final int CLASS_ID = 0x55a5bb66;
 
 protected int maxQts;
 
@@ -44,6 +44,6 @@ this.maxQts = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.receivedQueue#1436924774";
+return "messages.receivedQueue#55a5bb66";
 }
 }

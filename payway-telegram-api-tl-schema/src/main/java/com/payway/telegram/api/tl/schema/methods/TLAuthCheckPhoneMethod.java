@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAuthCheckPhoneMethod extends TLMethod<com.payway.telegram.api.tl.schema.auth.TLCheckedPhone> {
 
-public static final int CLASS_ID = 1877286395;
+public static final int CLASS_ID = 0x6fe51dfb;
 
 protected String phoneNumber;
 
@@ -47,6 +47,6 @@ this.phoneNumber = readTLString(stream);
 
 @Override
 public String toString() {
-return "auth.checkPhone#1877286395";
+return "auth.checkPhone#6fe51dfb";
 }
 }

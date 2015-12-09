@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLPhotosGetUserPhotosMethod extends TLMethod<com.payway.telegram.api.tl.schema.photos.TLAbstractPhotos> {
 
-public static final int CLASS_ID = -1209117380;
+public static final int CLASS_ID = 0xb7ee553c;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputUser userId;
 protected int offset;
@@ -83,6 +83,6 @@ this.limit = readInt(stream);
 
 @Override
 public String toString() {
-return "photos.getUserPhotos#-1209117380";
+return "photos.getUserPhotos#b7ee553c";
 }
 }

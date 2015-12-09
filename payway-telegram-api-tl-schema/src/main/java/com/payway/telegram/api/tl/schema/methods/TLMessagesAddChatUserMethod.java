@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesAddChatUserMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractStatedMessage> {
 
-public static final int CLASS_ID = 787082910;
+public static final int CLASS_ID = 0x2ee9ee9e;
 
 protected int chatId;
 protected com.payway.telegram.api.tl.schema.TLAbstractInputUser userId;
@@ -71,6 +71,6 @@ this.fwdLimit = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.addChatUser#787082910";
+return "messages.addChatUser#2ee9ee9e";
 }
 }

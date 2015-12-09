@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLSendMessageChooseContactAction extends TLAbstractSendMessageAction { 
 
-public static final int CLASS_ID = 1653390447;
+public static final int CLASS_ID = 0x628cbc6f;
 
 
 public TLSendMessageChooseContactAction() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "sendMessageChooseContactAction#1653390447";
+return "sendMessageChooseContactAction#628cbc6f";
 }
 }

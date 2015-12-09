@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageMediaGeo extends TLAbstractMessageMedia { 
 
-public static final int CLASS_ID = 1457575028;
+public static final int CLASS_ID = 0x56e0d474;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractGeoPoint geo;
 
@@ -42,6 +42,6 @@ this.geo = (com.payway.telegram.api.tl.schema.TLAbstractGeoPoint)readTLObject(st
 
 @Override
 public String toString() {
-return "messageMediaGeo#1457575028";
+return "messageMediaGeo#56e0d474";
 }
 }

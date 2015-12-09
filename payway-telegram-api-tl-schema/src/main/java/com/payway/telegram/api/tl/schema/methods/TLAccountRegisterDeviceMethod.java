@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAccountRegisterDeviceMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = 1147957548;
+public static final int CLASS_ID = 0x446c712c;
 
 protected int tokenType;
 protected String token;
@@ -119,6 +119,6 @@ this.langCode = readTLString(stream);
 
 @Override
 public String toString() {
-return "account.registerDevice#1147957548";
+return "account.registerDevice#446c712c";
 }
 }

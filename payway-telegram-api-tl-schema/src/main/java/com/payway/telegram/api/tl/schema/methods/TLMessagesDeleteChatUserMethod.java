@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesDeleteChatUserMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractStatedMessage> {
 
-public static final int CLASS_ID = -1010447069;
+public static final int CLASS_ID = 0xc3c5cd23;
 
 protected int chatId;
 protected com.payway.telegram.api.tl.schema.TLAbstractInputUser userId;
@@ -59,6 +59,6 @@ this.userId = (com.payway.telegram.api.tl.schema.TLAbstractInputUser)readTLObjec
 
 @Override
 public String toString() {
-return "messages.deleteChatUser#-1010447069";
+return "messages.deleteChatUser#c3c5cd23";
 }
 }

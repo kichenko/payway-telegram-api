@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesSetTypingMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = -1551737264;
+public static final int CLASS_ID = 0xa3825e50;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPeer peer;
 protected com.payway.telegram.api.tl.schema.TLAbstractSendMessageAction action;
@@ -59,6 +59,6 @@ this.action = (com.payway.telegram.api.tl.schema.TLAbstractSendMessageAction)rea
 
 @Override
 public String toString() {
-return "messages.setTyping#-1551737264";
+return "messages.setTyping#a3825e50";
 }
 }

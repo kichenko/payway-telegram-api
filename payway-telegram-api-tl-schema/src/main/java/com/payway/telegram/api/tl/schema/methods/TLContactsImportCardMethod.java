@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactsImportCardMethod extends TLMethod<com.payway.telegram.api.tl.schema.TLAbstractUser> {
 
-public static final int CLASS_ID = 1340184318;
+public static final int CLASS_ID = 0x4fe196fe;
 
 protected com.payway.telegram.api.tl.core.TLIntVector exportCard;
 
@@ -47,6 +47,6 @@ this.exportCard = readTLIntVector(stream, context);
 
 @Override
 public String toString() {
-return "contacts.importCard#1340184318";
+return "contacts.importCard#4fe196fe";
 }
 }

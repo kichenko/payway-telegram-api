@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageActionChatDeleteUser extends TLAbstractMessageAction { 
 
-public static final int CLASS_ID = -1297179892;
+public static final int CLASS_ID = 0xb2ae9b0c;
 
 protected int userId;
 
@@ -42,6 +42,6 @@ this.userId = readInt(stream);
 
 @Override
 public String toString() {
-return "messageActionChatDeleteUser#-1297179892";
+return "messageActionChatDeleteUser#b2ae9b0c";
 }
 }

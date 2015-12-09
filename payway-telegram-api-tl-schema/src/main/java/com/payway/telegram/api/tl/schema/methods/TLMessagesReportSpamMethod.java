@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesReportSpamMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = -820669733;
+public static final int CLASS_ID = 0xcf1592db;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPeer peer;
 
@@ -47,6 +47,6 @@ this.peer = (com.payway.telegram.api.tl.schema.TLAbstractInputPeer)readTLObject(
 
 @Override
 public String toString() {
-return "messages.reportSpam#-820669733";
+return "messages.reportSpam#cf1592db";
 }
 }

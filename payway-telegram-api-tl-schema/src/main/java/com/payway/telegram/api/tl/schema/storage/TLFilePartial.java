@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLFilePartial extends TLAbstractFileType { 
 
-public static final int CLASS_ID = 1086091090;
+public static final int CLASS_ID = 0x40bc6f52;
 
 
 public TLFilePartial() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "storage.filePartial#1086091090";
+return "storage.filePartial#40bc6f52";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesGetHistoryMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractMessages> {
 
-public static final int CLASS_ID = -1834885329;
+public static final int CLASS_ID = 0x92a1df2f;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPeer peer;
 protected int offset;
@@ -83,6 +83,6 @@ this.limit = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.getHistory#-1834885329";
+return "messages.getHistory#92a1df2f";
 }
 }

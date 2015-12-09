@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLDhConfigNotModified extends TLAbstractDhConfig { 
 
-public static final int CLASS_ID = -1058912715;
+public static final int CLASS_ID = 0xc0e24635;
 
 
 public TLDhConfigNotModified() {}
@@ -33,6 +33,6 @@ this.random = readTLBytes(stream, context);
 
 @Override
 public String toString() {
-return "messages.dhConfigNotModified#-1058912715";
+return "messages.dhConfigNotModified#c0e24635";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputEncryptedFileLocation extends TLAbstractInputFileLocation { 
 
-public static final int CLASS_ID = -182231723;
+public static final int CLASS_ID = 0xf5235d55;
 
 protected long id;
 protected long accessHash;
@@ -54,6 +54,6 @@ this.accessHash = readLong(stream);
 
 @Override
 public String toString() {
-return "inputEncryptedFileLocation#-182231723";
+return "inputEncryptedFileLocation#f5235d55";
 }
 }

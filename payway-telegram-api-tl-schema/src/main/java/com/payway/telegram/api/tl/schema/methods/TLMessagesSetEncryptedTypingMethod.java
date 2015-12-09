@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesSetEncryptedTypingMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = 2031374829;
+public static final int CLASS_ID = 0x791451ed;
 
 protected com.payway.telegram.api.tl.schema.TLInputEncryptedChat peer;
 protected boolean typing;
@@ -59,6 +59,6 @@ this.typing = readTLBool(stream);
 
 @Override
 public String toString() {
-return "messages.setEncryptedTyping#2031374829";
+return "messages.setEncryptedTyping#791451ed";
 }
 }

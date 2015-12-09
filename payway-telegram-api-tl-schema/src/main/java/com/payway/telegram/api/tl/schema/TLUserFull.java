@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUserFull extends TLObject {
 
-public static final int CLASS_ID = 1997575642;
+public static final int CLASS_ID = 0x771095da;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractUser user;
 protected com.payway.telegram.api.tl.schema.contacts.TLLink link;
@@ -114,6 +114,6 @@ this.realLastName = readTLString(stream);
 
 @Override
 public String toString() {
-return "userFull#1997575642";
+return "userFull#771095da";
 }
 }

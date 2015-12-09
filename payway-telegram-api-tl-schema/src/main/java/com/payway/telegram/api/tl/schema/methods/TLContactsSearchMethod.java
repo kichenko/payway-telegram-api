@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactsSearchMethod extends TLMethod<com.payway.telegram.api.tl.schema.contacts.TLFound> {
 
-public static final int CLASS_ID = 301470424;
+public static final int CLASS_ID = 0x11f812d8;
 
 protected String q;
 protected int limit;
@@ -59,6 +59,6 @@ this.limit = readInt(stream);
 
 @Override
 public String toString() {
-return "contacts.search#301470424";
+return "contacts.search#11f812d8";
 }
 }

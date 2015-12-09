@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLVideoEmpty extends TLAbstractVideo { 
 
-public static final int CLASS_ID = -1056548696;
+public static final int CLASS_ID = 0xc10658a8;
 
 
 public TLVideoEmpty() {}
@@ -33,6 +33,6 @@ this.id = readLong(stream);
 
 @Override
 public String toString() {
-return "videoEmpty#-1056548696";
+return "videoEmpty#c10658a8";
 }
 }

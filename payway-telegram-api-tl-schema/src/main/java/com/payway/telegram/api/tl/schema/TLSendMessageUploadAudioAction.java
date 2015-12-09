@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLSendMessageUploadAudioAction extends TLAbstractSendMessageAction { 
 
-public static final int CLASS_ID = -424899985;
+public static final int CLASS_ID = 0xe6ac8a6f;
 
 
 public TLSendMessageUploadAudioAction() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "sendMessageUploadAudioAction#-424899985";
+return "sendMessageUploadAudioAction#e6ac8a6f";
 }
 }

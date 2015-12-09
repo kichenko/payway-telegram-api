@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLChatForbidden extends TLAbstractChat { 
 
-public static final int CLASS_ID = -83047359;
+public static final int CLASS_ID = 0xfb0ccc41;
 
 protected String title;
 protected int date;
@@ -57,6 +57,6 @@ this.date = readInt(stream);
 
 @Override
 public String toString() {
-return "chatForbidden#-83047359";
+return "chatForbidden#fb0ccc41";
 }
 }

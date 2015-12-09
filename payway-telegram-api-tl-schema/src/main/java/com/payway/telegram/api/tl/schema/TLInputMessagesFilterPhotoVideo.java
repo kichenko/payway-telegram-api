@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputMessagesFilterPhotoVideo extends TLAbstractMessagesFilter { 
 
-public static final int CLASS_ID = 1458172132;
+public static final int CLASS_ID = 0x56e9f0e4;
 
 
 public TLInputMessagesFilterPhotoVideo() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "inputMessagesFilterPhotoVideo#1458172132";
+return "inputMessagesFilterPhotoVideo#56e9f0e4";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAuthLogOutMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = 1461180992;
+public static final int CLASS_ID = 0x5717da40;
 
 
 public TLAuthLogOutMethod () {
@@ -29,6 +29,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "auth.logOut#1461180992";
+return "auth.logOut#5717da40";
 }
 }

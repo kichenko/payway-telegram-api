@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesReadEncryptedHistoryMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = 2135648522;
+public static final int CLASS_ID = 0x7f4b690a;
 
 protected com.payway.telegram.api.tl.schema.TLInputEncryptedChat peer;
 protected int maxDate;
@@ -59,6 +59,6 @@ this.maxDate = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.readEncryptedHistory#2135648522";
+return "messages.readEncryptedHistory#7f4b690a";
 }
 }

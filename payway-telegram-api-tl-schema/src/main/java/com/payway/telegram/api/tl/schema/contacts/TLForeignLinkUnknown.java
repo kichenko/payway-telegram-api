@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLForeignLinkUnknown extends TLAbstractForeignLink { 
 
-public static final int CLASS_ID = 322183672;
+public static final int CLASS_ID = 0x133421f8;
 
 
 public TLForeignLinkUnknown() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "contacts.foreignLinkUnknown#322183672";
+return "contacts.foreignLinkUnknown#133421f8";
 }
 }

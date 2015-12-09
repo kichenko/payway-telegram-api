@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactFound extends TLObject {
 
-public static final int CLASS_ID = -360210539;
+public static final int CLASS_ID = 0xea879f95;
 
 protected int userId;
 
@@ -42,6 +42,6 @@ this.userId = readInt(stream);
 
 @Override
 public String toString() {
-return "contactFound#-360210539";
+return "contactFound#ea879f95";
 }
 }

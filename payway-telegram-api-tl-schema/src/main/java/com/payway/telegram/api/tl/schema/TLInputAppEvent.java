@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputAppEvent extends TLObject {
 
-public static final int CLASS_ID = 1996904104;
+public static final int CLASS_ID = 0x770656a8;
 
 protected double time;
 protected String type;
@@ -78,6 +78,6 @@ this.data = readTLString(stream);
 
 @Override
 public String toString() {
-return "inputAppEvent#1996904104";
+return "inputAppEvent#770656a8";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLDifferenceEmpty extends TLAbstractDifference { 
 
-public static final int CLASS_ID = 1567990072;
+public static final int CLASS_ID = 0x5d75a138;
 
 
 public TLDifferenceEmpty() {}
@@ -36,6 +36,6 @@ this.seq = readInt(stream);
 
 @Override
 public String toString() {
-return "updates.differenceEmpty#1567990072";
+return "updates.differenceEmpty#5d75a138";
 }
 }

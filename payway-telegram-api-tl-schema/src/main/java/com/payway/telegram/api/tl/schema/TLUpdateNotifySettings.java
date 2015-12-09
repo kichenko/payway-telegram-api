@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateNotifySettings extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = -1094555409;
+public static final int CLASS_ID = 0xbec268ef;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractNotifyPeer peer;
 protected com.payway.telegram.api.tl.schema.TLAbstractPeerNotifySettings notifySettings;
@@ -54,6 +54,6 @@ this.notifySettings = (com.payway.telegram.api.tl.schema.TLAbstractPeerNotifySet
 
 @Override
 public String toString() {
-return "updateNotifySettings#-1094555409";
+return "updateNotifySettings#bec268ef";
 }
 }

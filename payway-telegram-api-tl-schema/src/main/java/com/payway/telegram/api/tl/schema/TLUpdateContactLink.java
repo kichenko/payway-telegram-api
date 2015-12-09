@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateContactLink extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = 1369737882;
+public static final int CLASS_ID = 0x51a48a9a;
 
 protected int userId;
 protected com.payway.telegram.api.tl.schema.contacts.TLAbstractMyLink myLink;
@@ -66,6 +66,6 @@ this.foreignLink = (com.payway.telegram.api.tl.schema.contacts.TLAbstractForeign
 
 @Override
 public String toString() {
-return "updateContactLink#1369737882";
+return "updateContactLink#51a48a9a";
 }
 }

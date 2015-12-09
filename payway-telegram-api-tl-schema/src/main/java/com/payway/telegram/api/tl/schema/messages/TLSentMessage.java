@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLSentMessage extends TLAbstractSentMessage { 
 
-public static final int CLASS_ID = -772484260;
+public static final int CLASS_ID = 0xd1f4d35c;
 
 
 public TLSentMessage() {}
@@ -42,6 +42,6 @@ this.seq = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.sentMessage#-772484260";
+return "messages.sentMessage#d1f4d35c";
 }
 }

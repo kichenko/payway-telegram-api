@@ -373,8 +373,52 @@ public com.payway.telegram.api.tl.schema.contacts.TLFound ContactsSearch(String 
 return doRpcCall(new TLContactsSearchMethod(q, limit));
 }
 
-public TLObject InvokeWithLayer18(TLMethod query) throws IOException {
-return doRpcCall(new TLInvokeWithLayer18Method(query));
+public com.payway.telegram.api.tl.schema.account.TLPrivacyRules AccountGetPrivacy(com.payway.telegram.api.tl.schema.TLInputPrivacyKey key) throws IOException {
+return doRpcCall(new TLAccountGetPrivacyMethod(key));
+}
+
+public com.payway.telegram.api.tl.schema.account.TLPrivacyRules AccountSetPrivacy(com.payway.telegram.api.tl.schema.TLInputPrivacyKey key, com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractInputPrivacyRule> rules) throws IOException {
+return doRpcCall(new TLAccountSetPrivacyMethod(key, rules));
+}
+
+public TLBool AccountDeleteAccount(String reason) throws IOException {
+return doRpcCall(new TLAccountDeleteAccountMethod(reason));
+}
+
+public com.payway.telegram.api.tl.schema.TLAccountDaysTTL AccountGetAccountTTL() throws IOException {
+return doRpcCall(new TLAccountGetAccountTTLMethod());
+}
+
+public TLBool AccountSetAccountTTL(com.payway.telegram.api.tl.schema.TLAccountDaysTTL ttl) throws IOException {
+return doRpcCall(new TLAccountSetAccountTTLMethod(ttl));
+}
+
+public TLObject InvokeWithLayer(int layer, TLMethod query) throws IOException {
+return doRpcCall(new TLInvokeWithLayerMethod(layer, query));
+}
+
+public com.payway.telegram.api.tl.schema.TLAbstractUser ContactsResolveUsername(String username) throws IOException {
+return doRpcCall(new TLContactsResolveUsernameMethod(username));
+}
+
+public com.payway.telegram.api.tl.schema.account.TLSentChangePhoneCode AccountSendChangePhoneCode(String phoneNumber) throws IOException {
+return doRpcCall(new TLAccountSendChangePhoneCodeMethod(phoneNumber));
+}
+
+public com.payway.telegram.api.tl.schema.TLAbstractUser AccountChangePhone(String phoneNumber, String phoneCodeHash, String phoneCode) throws IOException {
+return doRpcCall(new TLAccountChangePhoneMethod(phoneNumber, phoneCodeHash, phoneCode));
+}
+
+public com.payway.telegram.api.tl.schema.messages.TLAbstractStickers MessagesGetStickers(String emoticon, String hash) throws IOException {
+return doRpcCall(new TLMessagesGetStickersMethod(emoticon, hash));
+}
+
+public com.payway.telegram.api.tl.schema.messages.TLAbstractAllStickers MessagesGetAllStickers(String hash) throws IOException {
+return doRpcCall(new TLMessagesGetAllStickersMethod(hash));
+}
+
+public TLBool AccountUpdateDeviceLocked(int period) throws IOException {
+return doRpcCall(new TLAccountUpdateDeviceLockedMethod(period));
 }
 
 

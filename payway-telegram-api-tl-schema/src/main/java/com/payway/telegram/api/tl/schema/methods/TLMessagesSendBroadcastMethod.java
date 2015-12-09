@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesSendBroadcastMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractStatedMessages> {
 
-public static final int CLASS_ID = 1102776690;
+public static final int CLASS_ID = 0x41bb0972;
 
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractInputUser> contacts;
 protected String message;
@@ -71,6 +71,6 @@ this.media = (com.payway.telegram.api.tl.schema.TLAbstractInputMedia)readTLObjec
 
 @Override
 public String toString() {
-return "messages.sendBroadcast#1102776690";
+return "messages.sendBroadcast#41bb0972";
 }
 }

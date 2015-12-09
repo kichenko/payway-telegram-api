@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUserSelf extends TLAbstractUser { 
 
-public static final int CLASS_ID = 1879553105;
+public static final int CLASS_ID = 0x7007b451;
 
 protected String firstName;
 protected String lastName;
@@ -117,6 +117,6 @@ this.inactive = readTLBool(stream);
 
 @Override
 public String toString() {
-return "userSelf#1879553105";
+return "userSelf#7007b451";
 }
 }

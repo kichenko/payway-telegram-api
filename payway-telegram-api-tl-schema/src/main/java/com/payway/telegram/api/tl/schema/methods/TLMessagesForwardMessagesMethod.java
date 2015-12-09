@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesForwardMessagesMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractStatedMessages> {
 
-public static final int CLASS_ID = 1363988751;
+public static final int CLASS_ID = 0x514cd10f;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPeer peer;
 protected com.payway.telegram.api.tl.core.TLIntVector id;
@@ -59,6 +59,6 @@ this.id = readTLIntVector(stream, context);
 
 @Override
 public String toString() {
-return "messages.forwardMessages#1363988751";
+return "messages.forwardMessages#514cd10f";
 }
 }

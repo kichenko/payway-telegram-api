@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputReportReasonOther extends TLAbstractReportReason { 
 
-public static final int CLASS_ID = -512463606;
+public static final int CLASS_ID = 0xe1746d0a;
 
 protected String text;
 
@@ -42,6 +42,6 @@ this.text = readTLString(stream);
 
 @Override
 public String toString() {
-return "inputReportReasonOther#-512463606";
+return "inputReportReasonOther#e1746d0a";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLSupport extends TLObject {
 
-public static final int CLASS_ID = 398898678;
+public static final int CLASS_ID = 0x17c6b5f6;
 
 protected String phoneNumber;
 protected com.payway.telegram.api.tl.schema.TLAbstractUser user;
@@ -54,6 +54,6 @@ this.user = (com.payway.telegram.api.tl.schema.TLAbstractUser)readTLObject(strea
 
 @Override
 public String toString() {
-return "help.support#398898678";
+return "help.support#17c6b5f6";
 }
 }

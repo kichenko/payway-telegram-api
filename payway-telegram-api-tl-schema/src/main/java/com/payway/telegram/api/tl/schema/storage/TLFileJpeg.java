@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLFileJpeg extends TLAbstractFileType { 
 
-public static final int CLASS_ID = 8322574;
+public static final int CLASS_ID = 0x7efe0e;
 
 
 public TLFileJpeg() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "storage.fileJpeg#8322574";
+return "storage.fileJpeg#7efe0e";
 }
 }

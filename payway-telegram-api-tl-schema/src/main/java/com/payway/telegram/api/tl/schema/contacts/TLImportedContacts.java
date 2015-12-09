@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLImportedContacts extends TLObject {
 
-public static final int CLASS_ID = -1387117803;
+public static final int CLASS_ID = 0xad524315;
 
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLImportedContact> imported;
 protected com.payway.telegram.api.tl.core.TLLongVector retryContacts;
@@ -66,6 +66,6 @@ this.users = readTLVector(stream, context);
 
 @Override
 public String toString() {
-return "contacts.importedContacts#-1387117803";
+return "contacts.importedContacts#ad524315";
 }
 }

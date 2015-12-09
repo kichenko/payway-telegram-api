@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactsGetBlockedMethod extends TLMethod<com.payway.telegram.api.tl.schema.contacts.TLAbstractBlocked> {
 
-public static final int CLASS_ID = -176409329;
+public static final int CLASS_ID = 0xf57c350f;
 
 protected int offset;
 protected int limit;
@@ -59,6 +59,6 @@ this.limit = readInt(stream);
 
 @Override
 public String toString() {
-return "contacts.getBlocked#-176409329";
+return "contacts.getBlocked#f57c350f";
 }
 }

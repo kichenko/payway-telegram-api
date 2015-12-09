@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactsGetSuggestedMethod extends TLMethod<com.payway.telegram.api.tl.schema.contacts.TLSuggested> {
 
-public static final int CLASS_ID = -847825880;
+public static final int CLASS_ID = 0xcd773428;
 
 protected int limit;
 
@@ -47,6 +47,6 @@ this.limit = readInt(stream);
 
 @Override
 public String toString() {
-return "contacts.getSuggested#-847825880";
+return "contacts.getSuggested#cd773428";
 }
 }

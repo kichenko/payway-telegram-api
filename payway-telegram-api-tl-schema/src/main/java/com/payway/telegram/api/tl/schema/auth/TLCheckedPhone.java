@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLCheckedPhone extends TLObject {
 
-public static final int CLASS_ID = -486486981;
+public static final int CLASS_ID = 0xe300cc3b;
 
 protected boolean phoneRegistered;
 protected boolean phoneInvited;
@@ -54,6 +54,6 @@ this.phoneInvited = readTLBool(stream);
 
 @Override
 public String toString() {
-return "auth.checkedPhone#-486486981";
+return "auth.checkedPhone#e300cc3b";
 }
 }

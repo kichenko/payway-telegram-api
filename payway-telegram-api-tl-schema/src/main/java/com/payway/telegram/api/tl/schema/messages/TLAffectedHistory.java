@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAffectedHistory extends TLObject {
 
-public static final int CLASS_ID = -1210173710;
+public static final int CLASS_ID = 0xb7de36f2;
 
 protected int pts;
 protected int seq;
@@ -66,6 +66,6 @@ this.offset = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.affectedHistory#-1210173710";
+return "messages.affectedHistory#b7de36f2";
 }
 }

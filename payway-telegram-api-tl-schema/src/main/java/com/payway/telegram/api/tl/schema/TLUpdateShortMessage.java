@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateShortMessage extends TLAbstractUpdates { 
 
-public static final int CLASS_ID = -738961532;
+public static final int CLASS_ID = 0xd3f45784;
 
 protected int id;
 protected int fromId;
@@ -102,6 +102,6 @@ this.seq = readInt(stream);
 
 @Override
 public String toString() {
-return "updateShortMessage#-738961532";
+return "updateShortMessage#d3f45784";
 }
 }

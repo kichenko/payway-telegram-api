@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputFileBig extends TLAbstractInputFile { 
 
-public static final int CLASS_ID = -95482955;
+public static final int CLASS_ID = 0xfa4f0bb5;
 
 
 public TLInputFileBig() {}
@@ -39,6 +39,6 @@ this.name = readTLString(stream);
 
 @Override
 public String toString() {
-return "inputFileBig#-95482955";
+return "inputFileBig#fa4f0bb5";
 }
 }

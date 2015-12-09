@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesGetFullChatMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLChatFull> {
 
-public static final int CLASS_ID = 998448230;
+public static final int CLASS_ID = 0x3b831c66;
 
 protected int chatId;
 
@@ -47,6 +47,6 @@ this.chatId = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.getFullChat#998448230";
+return "messages.getFullChat#3b831c66";
 }
 }

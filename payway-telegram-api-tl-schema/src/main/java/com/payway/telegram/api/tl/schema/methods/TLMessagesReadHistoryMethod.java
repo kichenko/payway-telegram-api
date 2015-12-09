@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesReadHistoryMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAffectedHistory> {
 
-public static final int CLASS_ID = -287800122;
+public static final int CLASS_ID = 0xeed884c6;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPeer peer;
 protected int maxId;
@@ -83,6 +83,6 @@ this.readContents = readTLBool(stream);
 
 @Override
 public String toString() {
-return "messages.readHistory#-287800122";
+return "messages.readHistory#eed884c6";
 }
 }

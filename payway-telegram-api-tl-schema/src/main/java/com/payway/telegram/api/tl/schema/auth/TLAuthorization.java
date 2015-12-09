@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAuthorization extends TLObject {
 
-public static final int CLASS_ID = -155815004;
+public static final int CLASS_ID = 0xf6b673a4;
 
 protected int expires;
 protected com.payway.telegram.api.tl.schema.TLAbstractUser user;
@@ -54,6 +54,6 @@ this.user = (com.payway.telegram.api.tl.schema.TLAbstractUser)readTLObject(strea
 
 @Override
 public String toString() {
-return "auth.authorization#-155815004";
+return "auth.authorization#f6b673a4";
 }
 }

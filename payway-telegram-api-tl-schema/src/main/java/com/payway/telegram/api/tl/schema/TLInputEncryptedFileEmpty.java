@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputEncryptedFileEmpty extends TLAbstractInputEncryptedFile { 
 
-public static final int CLASS_ID = 406307684;
+public static final int CLASS_ID = 0x1837c364;
 
 
 public TLInputEncryptedFileEmpty() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "inputEncryptedFileEmpty#406307684";
+return "inputEncryptedFileEmpty#1837c364";
 }
 }

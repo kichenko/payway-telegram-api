@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesGetChatsMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLChats> {
 
-public static final int CLASS_ID = 1013621127;
+public static final int CLASS_ID = 0x3c6aa187;
 
 protected com.payway.telegram.api.tl.core.TLIntVector id;
 
@@ -47,6 +47,6 @@ this.id = readTLIntVector(stream, context);
 
 @Override
 public String toString() {
-return "messages.getChats#1013621127";
+return "messages.getChats#3c6aa187";
 }
 }

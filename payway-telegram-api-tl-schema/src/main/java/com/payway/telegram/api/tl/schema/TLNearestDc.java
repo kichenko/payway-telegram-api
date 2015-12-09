@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLNearestDc extends TLObject {
 
-public static final int CLASS_ID = -1910892683;
+public static final int CLASS_ID = 0x8e1a1775;
 
 protected String country;
 protected int thisDc;
@@ -66,6 +66,6 @@ this.nearestDc = readInt(stream);
 
 @Override
 public String toString() {
-return "nearestDc#-1910892683";
+return "nearestDc#8e1a1775";
 }
 }

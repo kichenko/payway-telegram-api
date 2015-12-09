@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesGetDialogsMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractDialogs> {
 
-public static final int CLASS_ID = -321970698;
+public static final int CLASS_ID = 0xeccf1df6;
 
 protected int offset;
 protected int maxId;
@@ -71,6 +71,6 @@ this.limit = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.getDialogs#-321970698";
+return "messages.getDialogs#eccf1df6";
 }
 }

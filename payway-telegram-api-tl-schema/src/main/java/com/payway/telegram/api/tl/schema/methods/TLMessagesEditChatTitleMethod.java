@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesEditChatTitleMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractStatedMessage> {
 
-public static final int CLASS_ID = -1262720843;
+public static final int CLASS_ID = 0xb4bc68b5;
 
 protected int chatId;
 protected String title;
@@ -59,6 +59,6 @@ this.title = readTLString(stream);
 
 @Override
 public String toString() {
-return "messages.editChatTitle#-1262720843";
+return "messages.editChatTitle#b4bc68b5";
 }
 }

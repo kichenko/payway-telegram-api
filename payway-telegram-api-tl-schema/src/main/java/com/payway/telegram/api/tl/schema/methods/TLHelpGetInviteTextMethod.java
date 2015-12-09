@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLHelpGetInviteTextMethod extends TLMethod<com.payway.telegram.api.tl.schema.help.TLInviteText> {
 
-public static final int CLASS_ID = -1532407418;
+public static final int CLASS_ID = 0xa4a95186;
 
 protected String langCode;
 
@@ -47,6 +47,6 @@ this.langCode = readTLString(stream);
 
 @Override
 public String toString() {
-return "help.getInviteText#-1532407418";
+return "help.getInviteText#a4a95186";
 }
 }

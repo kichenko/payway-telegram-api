@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUserEmpty extends TLAbstractUser { 
 
-public static final int CLASS_ID = 537022650;
+public static final int CLASS_ID = 0x200250ba;
 
 
 public TLUserEmpty() {}
@@ -33,6 +33,6 @@ this.id = readInt(stream);
 
 @Override
 public String toString() {
-return "userEmpty#537022650";
+return "userEmpty#200250ba";
 }
 }

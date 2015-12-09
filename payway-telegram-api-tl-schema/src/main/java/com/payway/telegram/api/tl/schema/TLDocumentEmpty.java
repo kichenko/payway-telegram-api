@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLDocumentEmpty extends TLAbstractDocument { 
 
-public static final int CLASS_ID = 922273905;
+public static final int CLASS_ID = 0x36f8c871;
 
 
 public TLDocumentEmpty() {}
@@ -33,6 +33,6 @@ this.id = readLong(stream);
 
 @Override
 public String toString() {
-return "documentEmpty#922273905";
+return "documentEmpty#36f8c871";
 }
 }

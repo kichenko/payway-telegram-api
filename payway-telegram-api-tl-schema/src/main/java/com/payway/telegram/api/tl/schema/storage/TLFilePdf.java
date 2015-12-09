@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLFilePdf extends TLAbstractFileType { 
 
-public static final int CLASS_ID = -1373745011;
+public static final int CLASS_ID = 0xae1e508d;
 
 
 public TLFilePdf() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "storage.filePdf#-1373745011";
+return "storage.filePdf#ae1e508d";
 }
 }

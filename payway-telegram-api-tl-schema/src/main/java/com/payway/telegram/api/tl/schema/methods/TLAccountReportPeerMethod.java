@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAccountReportPeerMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = -1374118561;
+public static final int CLASS_ID = 0xae189d5f;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPeer peer;
 protected com.payway.telegram.api.tl.schema.TLAbstractReportReason reason;
@@ -59,6 +59,6 @@ this.reason = (com.payway.telegram.api.tl.schema.TLAbstractReportReason)readTLOb
 
 @Override
 public String toString() {
-return "account.reportPeer#-1374118561";
+return "account.reportPeer#ae189d5f";
 }
 }

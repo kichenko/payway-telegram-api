@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLPeerChat extends TLAbstractPeer { 
 
-public static final int CLASS_ID = -1160714821;
+public static final int CLASS_ID = 0xbad0e5bb;
 
 protected int chatId;
 
@@ -42,6 +42,6 @@ this.chatId = readInt(stream);
 
 @Override
 public String toString() {
-return "peerChat#-1160714821";
+return "peerChat#bad0e5bb";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAuthBindTempAuthKeyMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = -841733627;
+public static final int CLASS_ID = 0xcdd42a05;
 
 protected long permAuthKeyId;
 protected long nonce;
@@ -83,6 +83,6 @@ this.encryptedMessage = readTLBytes(stream, context);
 
 @Override
 public String toString() {
-return "auth.bindTempAuthKey#-841733627";
+return "auth.bindTempAuthKey#cdd42a05";
 }
 }

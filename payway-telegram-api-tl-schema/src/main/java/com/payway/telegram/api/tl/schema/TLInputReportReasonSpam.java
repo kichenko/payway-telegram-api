@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputReportReasonSpam extends TLAbstractReportReason { 
 
-public static final int CLASS_ID = 1490799288;
+public static final int CLASS_ID = 0x58dbcab8;
 
 
 public TLInputReportReasonSpam() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "inputReportReasonSpam#1490799288";
+return "inputReportReasonSpam#58dbcab8";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLPhotosUploadProfilePhotoMethod extends TLMethod<com.payway.telegram.api.tl.schema.photos.TLPhoto> {
 
-public static final int CLASS_ID = -720397176;
+public static final int CLASS_ID = 0xd50f9c88;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputFile file;
 protected String caption;
@@ -83,6 +83,6 @@ this.crop = (com.payway.telegram.api.tl.schema.TLAbstractInputPhotoCrop)readTLOb
 
 @Override
 public String toString() {
-return "photos.uploadProfilePhoto#-720397176";
+return "photos.uploadProfilePhoto#d50f9c88";
 }
 }

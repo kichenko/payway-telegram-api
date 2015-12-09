@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateChatParticipantDelete extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = 1851755554;
+public static final int CLASS_ID = 0x6e5f8c22;
 
 protected int chatId;
 protected int userId;
@@ -66,6 +66,6 @@ this.version = readInt(stream);
 
 @Override
 public String toString() {
-return "updateChatParticipantDelete#1851755554";
+return "updateChatParticipantDelete#6e5f8c22";
 }
 }

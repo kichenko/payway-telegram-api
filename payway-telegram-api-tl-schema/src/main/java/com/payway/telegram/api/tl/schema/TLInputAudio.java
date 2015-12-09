@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputAudio extends TLAbstractInputAudio { 
 
-public static final int CLASS_ID = 2010398975;
+public static final int CLASS_ID = 0x77d440ff;
 
 protected long id;
 protected long accessHash;
@@ -54,6 +54,6 @@ this.accessHash = readLong(stream);
 
 @Override
 public String toString() {
-return "inputAudio#2010398975";
+return "inputAudio#77d440ff";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLStatedMessagesLinks extends TLAbstractStatedMessages { 
 
-public static final int CLASS_ID = 1047852486;
+public static final int CLASS_ID = 0x3e74f5c6;
 
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.contacts.TLLink> links;
 
@@ -57,6 +57,6 @@ this.seq = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.statedMessagesLinks#1047852486";
+return "messages.statedMessagesLinks#3e74f5c6";
 }
 }

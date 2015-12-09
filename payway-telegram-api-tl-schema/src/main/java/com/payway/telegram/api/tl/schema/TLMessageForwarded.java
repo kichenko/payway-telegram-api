@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageForwarded extends TLAbstractMessage { 
 
-public static final int CLASS_ID = -1553471722;
+public static final int CLASS_ID = 0xa367e716;
 
 protected int flags;
 protected int fwdFromId;
@@ -129,6 +129,6 @@ this.media = (com.payway.telegram.api.tl.schema.TLAbstractMessageMedia)readTLObj
 
 @Override
 public String toString() {
-return "messageForwarded#-1553471722";
+return "messageForwarded#a367e716";
 }
 }

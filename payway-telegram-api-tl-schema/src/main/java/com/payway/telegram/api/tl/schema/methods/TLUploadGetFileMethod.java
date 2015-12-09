@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUploadGetFileMethod extends TLMethod<com.payway.telegram.api.tl.schema.upload.TLFile> {
 
-public static final int CLASS_ID = -475607115;
+public static final int CLASS_ID = 0xe3a6cfb5;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputFileLocation location;
 protected int offset;
@@ -71,6 +71,6 @@ this.limit = readInt(stream);
 
 @Override
 public String toString() {
-return "upload.getFile#-475607115";
+return "upload.getFile#e3a6cfb5";
 }
 }

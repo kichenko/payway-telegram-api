@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputMessagesFilterAudio extends TLAbstractMessagesFilter { 
 
-public static final int CLASS_ID = -808946398;
+public static final int CLASS_ID = 0xcfc87522;
 
 
 public TLInputMessagesFilterAudio() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "inputMessagesFilterAudio#-808946398";
+return "inputMessagesFilterAudio#cfc87522";
 }
 }

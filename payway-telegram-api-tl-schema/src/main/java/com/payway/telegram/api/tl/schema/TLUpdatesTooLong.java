@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdatesTooLong extends TLAbstractUpdates { 
 
-public static final int CLASS_ID = -484987010;
+public static final int CLASS_ID = 0xe317af7e;
 
 
 public TLUpdatesTooLong() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "updatesTooLong#-484987010";
+return "updatesTooLong#e317af7e";
 }
 }

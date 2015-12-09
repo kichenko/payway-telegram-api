@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLEncryptedChatWaiting extends TLAbstractEncryptedChat { 
 
-public static final int CLASS_ID = 1006044124;
+public static final int CLASS_ID = 0x3bf703dc;
 
 protected long accessHash;
 protected int date;
@@ -81,6 +81,6 @@ this.participantId = readInt(stream);
 
 @Override
 public String toString() {
-return "encryptedChatWaiting#1006044124";
+return "encryptedChatWaiting#3bf703dc";
 }
 }

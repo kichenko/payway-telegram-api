@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLPeerUser extends TLAbstractPeer { 
 
-public static final int CLASS_ID = -1649296275;
+public static final int CLASS_ID = 0x9db1bc6d;
 
 
 public TLPeerUser() {}
@@ -33,6 +33,6 @@ this.userId = readInt(stream);
 
 @Override
 public String toString() {
-return "peerUser#-1649296275";
+return "peerUser#9db1bc6d";
 }
 }

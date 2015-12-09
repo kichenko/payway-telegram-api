@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAppUpdate extends TLAbstractAppUpdate { 
 
-public static final int CLASS_ID = -1987579119;
+public static final int CLASS_ID = 0x8987f311;
 
 
 public TLAppUpdate() {}
@@ -42,6 +42,6 @@ this.text = readTLString(stream);
 
 @Override
 public String toString() {
-return "help.appUpdate#-1987579119";
+return "help.appUpdate#8987f311";
 }
 }

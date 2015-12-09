@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputMediaVideo extends TLAbstractInputMedia { 
 
-public static final int CLASS_ID = 2130852582;
+public static final int CLASS_ID = 0x7f023ae6;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputVideo id;
 
@@ -42,6 +42,6 @@ this.id = (com.payway.telegram.api.tl.schema.TLAbstractInputVideo)readTLObject(s
 
 @Override
 public String toString() {
-return "inputMediaVideo#2130852582";
+return "inputMediaVideo#7f023ae6";
 }
 }

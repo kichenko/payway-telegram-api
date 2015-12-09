@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageActionChatEditPhoto extends TLAbstractMessageAction { 
 
-public static final int CLASS_ID = 2144015272;
+public static final int CLASS_ID = 0x7fcb13a8;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractPhoto photo;
 
@@ -42,6 +42,6 @@ this.photo = (com.payway.telegram.api.tl.schema.TLAbstractPhoto)readTLObject(str
 
 @Override
 public String toString() {
-return "messageActionChatEditPhoto#2144015272";
+return "messageActionChatEditPhoto#7fcb13a8";
 }
 }

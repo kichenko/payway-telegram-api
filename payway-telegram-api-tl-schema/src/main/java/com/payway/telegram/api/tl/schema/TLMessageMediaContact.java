@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageMediaContact extends TLAbstractMessageMedia { 
 
-public static final int CLASS_ID = 1585262393;
+public static final int CLASS_ID = 0x5e7d2f39;
 
 protected String phoneNumber;
 protected String firstName;
@@ -78,6 +78,6 @@ this.userId = readInt(stream);
 
 @Override
 public String toString() {
-return "messageMediaContact#1585262393";
+return "messageMediaContact#5e7d2f39";
 }
 }

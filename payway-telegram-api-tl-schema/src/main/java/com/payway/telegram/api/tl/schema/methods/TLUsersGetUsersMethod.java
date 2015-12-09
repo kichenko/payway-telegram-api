@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUsersGetUsersMethod extends TLMethod<com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractUser>> {
 
-public static final int CLASS_ID = 227648840;
+public static final int CLASS_ID = 0xd91a548;
 
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractInputUser> id;
 
@@ -44,6 +44,6 @@ this.id = readTLVector(stream, context);
 
 @Override
 public String toString() {
-return "users.getUsers#227648840";
+return "users.getUsers#d91a548";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesAcceptEncryptionMethod extends TLMethod<com.payway.telegram.api.tl.schema.TLAbstractEncryptedChat> {
 
-public static final int CLASS_ID = 1035731989;
+public static final int CLASS_ID = 0x3dbc0415;
 
 protected com.payway.telegram.api.tl.schema.TLInputEncryptedChat peer;
 protected TLBytes gB;
@@ -71,6 +71,6 @@ this.keyFingerprint = readLong(stream);
 
 @Override
 public String toString() {
-return "messages.acceptEncryption#1035731989";
+return "messages.acceptEncryption#3dbc0415";
 }
 }

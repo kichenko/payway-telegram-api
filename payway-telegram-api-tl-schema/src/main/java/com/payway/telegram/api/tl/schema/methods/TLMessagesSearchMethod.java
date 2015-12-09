@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesSearchMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractMessages> {
 
-public static final int CLASS_ID = 132772523;
+public static final int CLASS_ID = 0x7e9f2ab;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPeer peer;
 protected String q;
@@ -131,6 +131,6 @@ this.limit = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.search#132772523";
+return "messages.search#7e9f2ab";
 }
 }

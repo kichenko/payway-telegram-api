@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInviteText extends TLObject {
 
-public static final int CLASS_ID = 415997816;
+public static final int CLASS_ID = 0x18cb9f78;
 
 protected String message;
 
@@ -42,6 +42,6 @@ this.message = readTLString(stream);
 
 @Override
 public String toString() {
-return "help.inviteText#415997816";
+return "help.inviteText#18cb9f78";
 }
 }

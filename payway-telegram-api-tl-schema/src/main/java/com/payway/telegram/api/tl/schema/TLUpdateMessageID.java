@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateMessageID extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = 1318109142;
+public static final int CLASS_ID = 0x4e90bfd6;
 
 protected int id;
 protected long randomId;
@@ -54,6 +54,6 @@ this.randomId = readLong(stream);
 
 @Override
 public String toString() {
-return "updateMessageID#1318109142";
+return "updateMessageID#4e90bfd6";
 }
 }

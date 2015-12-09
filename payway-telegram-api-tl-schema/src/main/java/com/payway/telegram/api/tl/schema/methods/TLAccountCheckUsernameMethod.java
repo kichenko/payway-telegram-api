@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAccountCheckUsernameMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = 655677548;
+public static final int CLASS_ID = 0x2714d86c;
 
 protected String username;
 
@@ -47,6 +47,6 @@ this.username = readTLString(stream);
 
 @Override
 public String toString() {
-return "account.checkUsername#655677548";
+return "account.checkUsername#2714d86c";
 }
 }

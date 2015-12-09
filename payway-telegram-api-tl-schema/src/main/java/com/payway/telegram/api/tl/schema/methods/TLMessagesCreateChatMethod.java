@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesCreateChatMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractStatedMessage> {
 
-public static final int CLASS_ID = 1100847854;
+public static final int CLASS_ID = 0x419d9aee;
 
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractInputUser> users;
 protected String title;
@@ -59,6 +59,6 @@ this.title = readTLString(stream);
 
 @Override
 public String toString() {
-return "messages.createChat#1100847854";
+return "messages.createChat#419d9aee";
 }
 }

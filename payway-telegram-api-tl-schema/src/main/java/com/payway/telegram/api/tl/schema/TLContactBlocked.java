@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactBlocked extends TLObject {
 
-public static final int CLASS_ID = 1444661369;
+public static final int CLASS_ID = 0x561bc879;
 
 protected int userId;
 protected int date;
@@ -54,6 +54,6 @@ this.date = readInt(stream);
 
 @Override
 public String toString() {
-return "contactBlocked#1444661369";
+return "contactBlocked#561bc879";
 }
 }

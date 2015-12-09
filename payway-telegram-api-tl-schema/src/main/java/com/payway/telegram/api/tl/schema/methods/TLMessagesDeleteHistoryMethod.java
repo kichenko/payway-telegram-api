@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesDeleteHistoryMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAffectedHistory> {
 
-public static final int CLASS_ID = -185009311;
+public static final int CLASS_ID = 0xf4f8fb61;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPeer peer;
 protected int offset;
@@ -59,6 +59,6 @@ this.offset = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.deleteHistory#-185009311";
+return "messages.deleteHistory#f4f8fb61";
 }
 }

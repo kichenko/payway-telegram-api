@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLPhotos extends TLAbstractPhotos { 
 
-public static final int CLASS_ID = -1916114267;
+public static final int CLASS_ID = 0x8dca6aa5;
 
 
 public TLPhotos() {}
@@ -36,6 +36,6 @@ this.users = readTLVector(stream, context);
 
 @Override
 public String toString() {
-return "photos.photos#-1916114267";
+return "photos.photos#8dca6aa5";
 }
 }

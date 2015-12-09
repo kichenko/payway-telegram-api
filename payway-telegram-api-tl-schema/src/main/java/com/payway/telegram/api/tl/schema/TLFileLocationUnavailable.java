@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLFileLocationUnavailable extends TLAbstractFileLocation { 
 
-public static final int CLASS_ID = 2086234950;
+public static final int CLASS_ID = 0x7c596b46;
 
 
 public TLFileLocationUnavailable() {}
@@ -39,6 +39,6 @@ this.secret = readLong(stream);
 
 @Override
 public String toString() {
-return "fileLocationUnavailable#2086234950";
+return "fileLocationUnavailable#7c596b46";
 }
 }

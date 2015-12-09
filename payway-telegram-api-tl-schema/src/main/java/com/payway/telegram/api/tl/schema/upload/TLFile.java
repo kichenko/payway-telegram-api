@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLFile extends TLObject {
 
-public static final int CLASS_ID = 157948117;
+public static final int CLASS_ID = 0x96a18d5;
 
 protected com.payway.telegram.api.tl.schema.storage.TLAbstractFileType type;
 protected int mtime;
@@ -66,6 +66,6 @@ this.bytes = readTLBytes(stream, context);
 
 @Override
 public String toString() {
-return "upload.file#157948117";
+return "upload.file#96a18d5";
 }
 }

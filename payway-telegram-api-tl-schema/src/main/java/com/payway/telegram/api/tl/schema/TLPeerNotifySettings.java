@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLPeerNotifySettings extends TLAbstractPeerNotifySettings { 
 
-public static final int CLASS_ID = -1923214866;
+public static final int CLASS_ID = 0x8d5e11ee;
 
 protected int muteUntil;
 protected String sound;
@@ -78,6 +78,6 @@ this.eventsMask = readInt(stream);
 
 @Override
 public String toString() {
-return "peerNotifySettings#-1923214866";
+return "peerNotifySettings#8d5e11ee";
 }
 }

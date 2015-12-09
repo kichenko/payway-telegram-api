@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAccountGetWallPapersMethod extends TLMethod<com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractWallPaper>> {
 
-public static final int CLASS_ID = -1068696894;
+public static final int CLASS_ID = 0xc04cfac2;
 
 
 public TLAccountGetWallPapersMethod () {
@@ -26,6 +26,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "account.getWallPapers#-1068696894";
+return "account.getWallPapers#c04cfac2";
 }
 }

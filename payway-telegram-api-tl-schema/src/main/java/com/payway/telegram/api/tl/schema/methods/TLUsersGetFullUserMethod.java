@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUsersGetFullUserMethod extends TLMethod<com.payway.telegram.api.tl.schema.TLUserFull> {
 
-public static final int CLASS_ID = -902781519;
+public static final int CLASS_ID = 0xca30a5b1;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputUser id;
 
@@ -47,6 +47,6 @@ this.id = (com.payway.telegram.api.tl.schema.TLAbstractInputUser)readTLObject(st
 
 @Override
 public String toString() {
-return "users.getFullUser#-902781519";
+return "users.getFullUser#ca30a5b1";
 }
 }

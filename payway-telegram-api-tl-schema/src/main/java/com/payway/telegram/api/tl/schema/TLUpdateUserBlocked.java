@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateUserBlocked extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = -2131957734;
+public static final int CLASS_ID = 0x80ece81a;
 
 protected int userId;
 protected boolean blocked;
@@ -54,6 +54,6 @@ this.blocked = readTLBool(stream);
 
 @Override
 public String toString() {
-return "updateUserBlocked#-2131957734";
+return "updateUserBlocked#80ece81a";
 }
 }

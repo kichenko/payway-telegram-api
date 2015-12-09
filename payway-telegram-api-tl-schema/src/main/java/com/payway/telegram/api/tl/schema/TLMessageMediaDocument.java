@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageMediaDocument extends TLAbstractMessageMedia { 
 
-public static final int CLASS_ID = 802824708;
+public static final int CLASS_ID = 0x2fda2204;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractDocument document;
 
@@ -42,6 +42,6 @@ this.document = (com.payway.telegram.api.tl.schema.TLAbstractDocument)readTLObje
 
 @Override
 public String toString() {
-return "messageMediaDocument#802824708";
+return "messageMediaDocument#2fda2204";
 }
 }

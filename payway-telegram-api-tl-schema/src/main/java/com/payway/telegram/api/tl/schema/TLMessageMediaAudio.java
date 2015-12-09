@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageMediaAudio extends TLAbstractMessageMedia { 
 
-public static final int CLASS_ID = -961117440;
+public static final int CLASS_ID = 0xc6b68300;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractAudio audio;
 
@@ -42,6 +42,6 @@ this.audio = (com.payway.telegram.api.tl.schema.TLAbstractAudio)readTLObject(str
 
 @Override
 public String toString() {
-return "messageMediaAudio#-961117440";
+return "messageMediaAudio#c6b68300";
 }
 }

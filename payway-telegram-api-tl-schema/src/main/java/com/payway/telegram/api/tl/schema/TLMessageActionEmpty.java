@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageActionEmpty extends TLAbstractMessageAction { 
 
-public static final int CLASS_ID = -1230047312;
+public static final int CLASS_ID = 0xb6aef7b0;
 
 
 public TLMessageActionEmpty() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "messageActionEmpty#-1230047312";
+return "messageActionEmpty#b6aef7b0";
 }
 }

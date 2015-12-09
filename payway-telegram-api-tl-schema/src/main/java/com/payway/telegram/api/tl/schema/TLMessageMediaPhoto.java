@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessageMediaPhoto extends TLAbstractMessageMedia { 
 
-public static final int CLASS_ID = -926655958;
+public static final int CLASS_ID = 0xc8c45a2a;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractPhoto photo;
 
@@ -42,6 +42,6 @@ this.photo = (com.payway.telegram.api.tl.schema.TLAbstractPhoto)readTLObject(str
 
 @Override
 public String toString() {
-return "messageMediaPhoto#-926655958";
+return "messageMediaPhoto#c8c45a2a";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLChatFull extends TLObject {
 
-public static final int CLASS_ID = -438840932;
+public static final int CLASS_ID = 0xe5d7d19c;
 
 protected com.payway.telegram.api.tl.schema.TLChatFull fullChat;
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLAbstractChat> chats;
@@ -66,6 +66,6 @@ this.users = readTLVector(stream, context);
 
 @Override
 public String toString() {
-return "messages.chatFull#-438840932";
+return "messages.chatFull#e5d7d19c";
 }
 }

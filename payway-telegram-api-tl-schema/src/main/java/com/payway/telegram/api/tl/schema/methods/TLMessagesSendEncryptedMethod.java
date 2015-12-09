@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesSendEncryptedMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractSentEncryptedMessage> {
 
-public static final int CLASS_ID = -1451792525;
+public static final int CLASS_ID = 0xa9776773;
 
 protected com.payway.telegram.api.tl.schema.TLInputEncryptedChat peer;
 protected long randomId;
@@ -71,6 +71,6 @@ this.data = readTLBytes(stream, context);
 
 @Override
 public String toString() {
-return "messages.sendEncrypted#-1451792525";
+return "messages.sendEncrypted#a9776773";
 }
 }

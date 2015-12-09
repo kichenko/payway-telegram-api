@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputMessagesFilterEmpty extends TLAbstractMessagesFilter { 
 
-public static final int CLASS_ID = 1474492012;
+public static final int CLASS_ID = 0x57e2f66c;
 
 
 public TLInputMessagesFilterEmpty() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "inputMessagesFilterEmpty#1474492012";
+return "inputMessagesFilterEmpty#57e2f66c";
 }
 }

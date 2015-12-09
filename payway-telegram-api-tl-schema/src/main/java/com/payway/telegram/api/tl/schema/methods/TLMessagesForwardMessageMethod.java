@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesForwardMessageMethod extends TLMethod<com.payway.telegram.api.tl.schema.messages.TLAbstractStatedMessage> {
 
-public static final int CLASS_ID = 66319602;
+public static final int CLASS_ID = 0x3f3f4f2;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputPeer peer;
 protected int id;
@@ -71,6 +71,6 @@ this.randomId = readLong(stream);
 
 @Override
 public String toString() {
-return "messages.forwardMessage#66319602";
+return "messages.forwardMessage#3f3f4f2";
 }
 }

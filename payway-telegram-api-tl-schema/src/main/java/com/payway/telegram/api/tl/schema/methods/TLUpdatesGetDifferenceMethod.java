@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdatesGetDifferenceMethod extends TLMethod<com.payway.telegram.api.tl.schema.updates.TLAbstractDifference> {
 
-public static final int CLASS_ID = 168039573;
+public static final int CLASS_ID = 0xa041495;
 
 protected int pts;
 protected int date;
@@ -71,6 +71,6 @@ this.qts = readInt(stream);
 
 @Override
 public String toString() {
-return "updates.getDifference#168039573";
+return "updates.getDifference#a041495";
 }
 }

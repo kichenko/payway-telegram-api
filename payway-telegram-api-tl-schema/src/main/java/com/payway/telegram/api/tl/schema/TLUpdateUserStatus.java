@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateUserStatus extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = 469489699;
+public static final int CLASS_ID = 0x1bfbd823;
 
 protected int userId;
 protected com.payway.telegram.api.tl.schema.TLAbstractUserStatus status;
@@ -54,6 +54,6 @@ this.status = (com.payway.telegram.api.tl.schema.TLAbstractUserStatus)readTLObje
 
 @Override
 public String toString() {
-return "updateUserStatus#469489699";
+return "updateUserStatus#1bfbd823";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLDcOption extends TLObject {
 
-public static final int CLASS_ID = 784507964;
+public static final int CLASS_ID = 0x2ec2a43c;
 
 protected int id;
 protected String hostname;
@@ -78,6 +78,6 @@ this.port = readInt(stream);
 
 @Override
 public String toString() {
-return "dcOption#784507964";
+return "dcOption#2ec2a43c";
 }
 }

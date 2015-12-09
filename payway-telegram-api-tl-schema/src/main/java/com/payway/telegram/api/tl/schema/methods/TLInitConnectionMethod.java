@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInitConnectionMethod extends TLMethod<TLObject> {
 
-public static final int CLASS_ID = 1769565673;
+public static final int CLASS_ID = 0x69796de9;
 
 protected int apiId;
 protected String deviceModel;
@@ -104,6 +104,6 @@ this.query = readTLMethod(stream, context);
 
 @Override
 public String toString() {
-return "initConnection#1769565673";
+return "initConnection#69796de9";
 }
 }

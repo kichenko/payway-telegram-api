@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLContactsUnblockMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = -448724803;
+public static final int CLASS_ID = 0xe54100bd;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractInputUser id;
 
@@ -47,6 +47,6 @@ this.id = (com.payway.telegram.api.tl.schema.TLAbstractInputUser)readTLObject(st
 
 @Override
 public String toString() {
-return "contacts.unblock#-448724803";
+return "contacts.unblock#e54100bd";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesDiscardEncryptionMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = -304536635;
+public static final int CLASS_ID = 0xedd923c5;
 
 protected int chatId;
 
@@ -47,6 +47,6 @@ this.chatId = readInt(stream);
 
 @Override
 public String toString() {
-return "messages.discardEncryption#-304536635";
+return "messages.discardEncryption#edd923c5";
 }
 }

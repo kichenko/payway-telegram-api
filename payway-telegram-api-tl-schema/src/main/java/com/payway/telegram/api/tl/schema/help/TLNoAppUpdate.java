@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLNoAppUpdate extends TLAbstractAppUpdate { 
 
-public static final int CLASS_ID = -1000708810;
+public static final int CLASS_ID = 0xc45a6536;
 
 
 public TLNoAppUpdate() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "help.noAppUpdate#-1000708810";
+return "help.noAppUpdate#c45a6536";
 }
 }

@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUserForeign extends TLAbstractUser { 
 
-public static final int CLASS_ID = 123533224;
+public static final int CLASS_ID = 0x75cf7a8;
 
 protected String firstName;
 protected String lastName;
@@ -105,6 +105,6 @@ this.status = (com.payway.telegram.api.tl.schema.TLAbstractUserStatus)readTLObje
 
 @Override
 public String toString() {
-return "userForeign#123533224";
+return "userForeign#75cf7a8";
 }
 }

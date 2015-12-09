@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputPhotoCropAuto extends TLAbstractInputPhotoCrop { 
 
-public static final int CLASS_ID = -1377390588;
+public static final int CLASS_ID = 0xade6b004;
 
 
 public TLInputPhotoCropAuto() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "inputPhotoCropAuto#-1377390588";
+return "inputPhotoCropAuto#ade6b004";
 }
 }

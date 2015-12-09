@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLHelpGetConfigMethod extends TLMethod<com.payway.telegram.api.tl.schema.TLConfig> {
 
-public static final int CLASS_ID = -990308245;
+public static final int CLASS_ID = 0xc4f9186b;
 
 
 public TLHelpGetConfigMethod () {
@@ -29,6 +29,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "help.getConfig#-990308245";
+return "help.getConfig#c4f9186b";
 }
 }

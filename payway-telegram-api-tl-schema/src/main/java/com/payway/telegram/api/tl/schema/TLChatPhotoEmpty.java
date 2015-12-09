@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLChatPhotoEmpty extends TLAbstractChatPhoto { 
 
-public static final int CLASS_ID = 935395612;
+public static final int CLASS_ID = 0x37c1011c;
 
 
 public TLChatPhotoEmpty() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "chatPhotoEmpty#935395612";
+return "chatPhotoEmpty#37c1011c";
 }
 }

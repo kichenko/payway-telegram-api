@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLLink extends TLObject {
 
-public static final int CLASS_ID = -322001931;
+public static final int CLASS_ID = 0xeccea3f5;
 
 protected com.payway.telegram.api.tl.schema.contacts.TLAbstractMyLink myLink;
 protected com.payway.telegram.api.tl.schema.contacts.TLAbstractForeignLink foreignLink;
@@ -66,6 +66,6 @@ this.user = (com.payway.telegram.api.tl.schema.TLAbstractUser)readTLObject(strea
 
 @Override
 public String toString() {
-return "contacts.link#-322001931";
+return "contacts.link#eccea3f5";
 }
 }

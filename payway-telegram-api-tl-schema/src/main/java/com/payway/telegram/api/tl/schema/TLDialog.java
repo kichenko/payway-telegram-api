@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLDialog extends TLObject {
 
-public static final int CLASS_ID = -1422222932;
+public static final int CLASS_ID = 0xab3a99ac;
 
 protected com.payway.telegram.api.tl.schema.TLAbstractPeer peer;
 protected int topMessage;
@@ -78,6 +78,6 @@ this.notifySettings = (com.payway.telegram.api.tl.schema.TLAbstractPeerNotifySet
 
 @Override
 public String toString() {
-return "dialog#-1422222932";
+return "dialog#ab3a99ac";
 }
 }

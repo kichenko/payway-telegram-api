@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLMessagesSlice extends TLAbstractMessages { 
 
-public static final int CLASS_ID = 189033187;
+public static final int CLASS_ID = 0xb446ae3;
 
 protected int count;
 
@@ -51,6 +51,6 @@ this.users = readTLVector(stream, context);
 
 @Override
 public String toString() {
-return "messages.messagesSlice#189033187";
+return "messages.messagesSlice#b446ae3";
 }
 }

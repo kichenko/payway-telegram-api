@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputPhotoCrop extends TLAbstractInputPhotoCrop { 
 
-public static final int CLASS_ID = -644787419;
+public static final int CLASS_ID = 0xd9915325;
 
 protected double cropLeft;
 protected double cropTop;
@@ -66,6 +66,6 @@ this.cropWidth = readDouble(stream);
 
 @Override
 public String toString() {
-return "inputPhotoCrop#-644787419";
+return "inputPhotoCrop#d9915325";
 }
 }

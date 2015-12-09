@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputDocumentFileLocation extends TLAbstractInputFileLocation { 
 
-public static final int CLASS_ID = 1313188841;
+public static final int CLASS_ID = 0x4e45abe9;
 
 protected long id;
 protected long accessHash;
@@ -54,6 +54,6 @@ this.accessHash = readLong(stream);
 
 @Override
 public String toString() {
-return "inputDocumentFileLocation#1313188841";
+return "inputDocumentFileLocation#4e45abe9";
 }
 }

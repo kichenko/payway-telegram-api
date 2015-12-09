@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputGeoPoint extends TLAbstractInputGeoPoint { 
 
-public static final int CLASS_ID = -206066487;
+public static final int CLASS_ID = 0xf3b7acc9;
 
 protected double lat;
 protected double lon;
@@ -54,6 +54,6 @@ this.lon = readDouble(stream);
 
 @Override
 public String toString() {
-return "inputGeoPoint#-206066487";
+return "inputGeoPoint#f3b7acc9";
 }
 }

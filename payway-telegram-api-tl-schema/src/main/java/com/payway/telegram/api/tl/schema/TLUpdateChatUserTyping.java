@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateChatUserTyping extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = -1704596961;
+public static final int CLASS_ID = 0x9a65ea1f;
 
 protected int chatId;
 protected int userId;
@@ -66,6 +66,6 @@ this.action = (com.payway.telegram.api.tl.schema.TLAbstractSendMessageAction)rea
 
 @Override
 public String toString() {
-return "updateChatUserTyping#-1704596961";
+return "updateChatUserTyping#9a65ea1f";
 }
 }

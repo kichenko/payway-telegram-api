@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUserProfilePhoto extends TLAbstractUserProfilePhoto { 
 
-public static final int CLASS_ID = -715532088;
+public static final int CLASS_ID = 0xd559d8c8;
 
 protected long photoId;
 protected com.payway.telegram.api.tl.schema.TLAbstractFileLocation photoSmall;
@@ -66,6 +66,6 @@ this.photoBig = (com.payway.telegram.api.tl.schema.TLAbstractFileLocation)readTL
 
 @Override
 public String toString() {
-return "userProfilePhoto#-715532088";
+return "userProfilePhoto#d559d8c8";
 }
 }

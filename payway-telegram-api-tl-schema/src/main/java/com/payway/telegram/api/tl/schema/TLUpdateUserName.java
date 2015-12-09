@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateUserName extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = -1489818765;
+public static final int CLASS_ID = 0xa7332b73;
 
 protected int userId;
 protected String firstName;
@@ -78,6 +78,6 @@ this.username = readTLString(stream);
 
 @Override
 public String toString() {
-return "updateUserName#-1489818765";
+return "updateUserName#a7332b73";
 }
 }

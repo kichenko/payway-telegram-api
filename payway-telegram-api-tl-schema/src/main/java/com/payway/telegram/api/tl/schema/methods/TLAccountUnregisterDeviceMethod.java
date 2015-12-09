@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLAccountUnregisterDeviceMethod extends TLMethod<com.payway.telegram.api.tl.core.TLBool> {
 
-public static final int CLASS_ID = 1707432768;
+public static final int CLASS_ID = 0x65c55b40;
 
 protected int tokenType;
 protected String token;
@@ -59,6 +59,6 @@ this.token = readTLString(stream);
 
 @Override
 public String toString() {
-return "account.unregisterDevice#1707432768";
+return "account.unregisterDevice#65c55b40";
 }
 }

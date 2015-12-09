@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLBlocked extends TLAbstractBlocked { 
 
-public static final int CLASS_ID = 471043349;
+public static final int CLASS_ID = 0x1c138d15;
 
 
 public TLBlocked() {}
@@ -36,6 +36,6 @@ this.users = readTLVector(stream, context);
 
 @Override
 public String toString() {
-return "contacts.blocked#471043349";
+return "contacts.blocked#1c138d15";
 }
 }

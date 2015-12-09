@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLFileMov extends TLAbstractFileType { 
 
-public static final int CLASS_ID = 1258941372;
+public static final int CLASS_ID = 0x4b09ebbc;
 
 
 public TLFileMov() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "storage.fileMov#1258941372";
+return "storage.fileMov#4b09ebbc";
 }
 }

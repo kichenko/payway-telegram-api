@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateServiceNotification extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = 942527460;
+public static final int CLASS_ID = 0x382dd3e4;
 
 protected String type;
 protected String message;
@@ -78,6 +78,6 @@ this.popup = readTLBool(stream);
 
 @Override
 public String toString() {
-return "updateServiceNotification#942527460";
+return "updateServiceNotification#382dd3e4";
 }
 }

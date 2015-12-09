@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLUpdateDcOptions extends TLAbstractUpdate { 
 
-public static final int CLASS_ID = -1906403213;
+public static final int CLASS_ID = 0x8e5e9873;
 
 protected com.payway.telegram.api.tl.core.TLVector<com.payway.telegram.api.tl.schema.TLDcOption> dcOptions;
 
@@ -42,6 +42,6 @@ this.dcOptions = readTLVector(stream, context);
 
 @Override
 public String toString() {
-return "updateDcOptions#-1906403213";
+return "updateDcOptions#8e5e9873";
 }
 }

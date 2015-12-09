@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLInputPeerNotifyEventsEmpty extends TLAbstractInputPeerNotifyEvents { 
 
-public static final int CLASS_ID = -265263912;
+public static final int CLASS_ID = 0xf03064d8;
 
 
 public TLInputPeerNotifyEventsEmpty() {}
@@ -22,6 +22,6 @@ return CLASS_ID;
 
 @Override
 public String toString() {
-return "inputPeerNotifyEventsEmpty#-265263912";
+return "inputPeerNotifyEventsEmpty#f03064d8";
 }
 }

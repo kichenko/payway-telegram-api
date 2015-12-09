@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLForeignLinkRequested extends TLAbstractForeignLink { 
 
-public static final int CLASS_ID = -1484775609;
+public static final int CLASS_ID = 0xa7801f47;
 
 protected boolean hasPhone;
 
@@ -42,6 +42,6 @@ this.hasPhone = readTLBool(stream);
 
 @Override
 public String toString() {
-return "contacts.foreignLinkRequested#-1484775609";
+return "contacts.foreignLinkRequested#a7801f47";
 }
 }

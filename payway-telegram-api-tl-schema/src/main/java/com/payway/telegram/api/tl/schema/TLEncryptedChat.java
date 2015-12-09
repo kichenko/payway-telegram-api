@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLEncryptedChat extends TLAbstractEncryptedChat { 
 
-public static final int CLASS_ID = -94974410;
+public static final int CLASS_ID = 0xfa56ce36;
 
 protected long accessHash;
 protected int date;
@@ -105,6 +105,6 @@ this.keyFingerprint = readLong(stream);
 
 @Override
 public String toString() {
-return "encryptedChat#-94974410";
+return "encryptedChat#fa56ce36";
 }
 }

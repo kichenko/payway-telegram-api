@@ -8,7 +8,7 @@ import static com.payway.telegram.api.tl.core.utils.StreamingUtils.*;
 
 public class TLWallPaper extends TLAbstractWallPaper { 
 
-public static final int CLASS_ID = -860866985;
+public static final int CLASS_ID = 0xccb03657;
 
 
 public TLWallPaper() {}
@@ -42,6 +42,6 @@ this.color = readInt(stream);
 
 @Override
 public String toString() {
-return "wallPaper#-860866985";
+return "wallPaper#ccb03657";
 }
 }
