@@ -1,7 +1,6 @@
 package com.payway.telegram.api.tl.core;
 
 import com.payway.telegram.api.tl.core.utils.StreamingUtils;
-import com.payway.telegram.api.tl.core.exception.DeserializeException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -50,7 +49,7 @@ public abstract class TLObject implements Serializable {
      * @param stream destination stream
      * @throws IOException
      */
-    public void serialize(OutputStream stream) throws IOException {
+    public void serialize(final OutputStream stream) throws IOException {
         StreamingUtils.writeInt(getClassId(), stream);
         serializeBody(stream);
     }
@@ -62,11 +61,15 @@ public abstract class TLObject implements Serializable {
      * @param context tl context
      * @throws IOException
      */
-    public void deserialize(InputStream stream, TLContext context) throws IOException {
+    public void deserialize(final InputStream stream, final TLContext context) throws IOException {
         int classId = StreamingUtils.readInt(stream);
         if (classId != getClassId()) {
-            throw new DeserializeException("Wrong class id. Founded:" + Integer.toHexString(classId)
-                    + ", expected: " + Integer.toHexString(getClassId()));
+            throw new IOException(
+                    "Wrong class id. Founded:"
+                    + Integer.toHexString(classId)
+                    + ", expected: "
+                    + Integer.toHexString(getClassId())
+            );
         }
         deserializeBody(stream, context);
     }
@@ -77,8 +80,8 @@ public abstract class TLObject implements Serializable {
      * @param stream destination stream
      * @throws IOException
      */
-    public void serializeBody(OutputStream stream) throws IOException {
-
+    public void serializeBody(final OutputStream stream) throws IOException {
+        //
     }
 
     /**
@@ -88,7 +91,7 @@ public abstract class TLObject implements Serializable {
      * @param context tl context
      * @throws IOException
      */
-    public void deserializeBody(InputStream stream, TLContext context) throws IOException {
-
+    public void deserializeBody(final InputStream stream, final TLContext context) throws IOException {
+        //
     }
 }

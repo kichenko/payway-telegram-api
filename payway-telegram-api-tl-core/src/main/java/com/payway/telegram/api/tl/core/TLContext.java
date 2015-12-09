@@ -1,7 +1,6 @@
 package com.payway.telegram.api.tl.core;
 
 import com.payway.telegram.api.tl.core.utils.StreamingUtils;
-import com.payway.telegram.api.tl.core.exception.DeserializeException;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -80,6 +79,7 @@ public abstract class TLContext {
     }
 
     public TLObject deserializeMessage(int clazzId, InputStream stream) throws IOException {
+
         if (clazzId == TLGzipObject.CLASS_ID) {
             TLGzipObject obj = new TLGzipObject();
             obj.deserializeBody(stream, this);
@@ -102,11 +102,8 @@ public abstract class TLContext {
                 TLObject message = (TLObject) messageClass.getConstructor().newInstance();
                 message.deserializeBody(stream, this);
                 return convertCompatClass(message);
-            } catch (DeserializeException e) {
-                throw e;
-            } catch (Exception e) {
-                e.printStackTrace();
-                throw new IOException("Unable to deserialize data");
+            } catch (Exception ex) {
+                throw new IOException("Unable to deserialize data", ex);
             }
         }
 
@@ -117,12 +114,9 @@ public abstract class TLContext {
                 message.deserializeBody(stream, this);
                 return message;
             } else {
-                throw new DeserializeException("Unsupported class: #" + Integer.toHexString(clazzId));
+                throw new IOException("Unsupported class: #" + Integer.toHexString(clazzId));
             }
-        } catch (DeserializeException e) {
-            throw e;
         } catch (Exception e) {
-            e.printStackTrace();
             throw new IOException("Unable to deserialize data");
         }
     }

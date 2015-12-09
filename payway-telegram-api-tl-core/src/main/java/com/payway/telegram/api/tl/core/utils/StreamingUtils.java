@@ -10,7 +10,6 @@ import com.payway.telegram.api.tl.core.TLMethod;
 import com.payway.telegram.api.tl.core.TLObject;
 import com.payway.telegram.api.tl.core.TLStringVector;
 import com.payway.telegram.api.tl.core.TLVector;
-import com.payway.telegram.api.tl.core.exception.DeserializeException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -513,7 +512,7 @@ public class StreamingUtils {
         } else if (v == TLBoolFalse.CLASS_ID) {
             return false;
         } else {
-            throw new DeserializeException("Not bool value: " + Integer.toHexString(v));
+            throw new IOException("Not bool value: " + Integer.toHexString(v));
         }
     }
 
