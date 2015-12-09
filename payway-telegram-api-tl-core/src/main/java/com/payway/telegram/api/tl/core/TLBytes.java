@@ -8,9 +8,9 @@ package com.payway.telegram.api.tl.core;
  */
 public class TLBytes {
 
-    private byte[] data;
-    private int offset;
-    private int len;
+    private final byte[] data;
+    private final int offset;
+    private final int len;
 
     public TLBytes(byte[] data) {
         this.data = data;

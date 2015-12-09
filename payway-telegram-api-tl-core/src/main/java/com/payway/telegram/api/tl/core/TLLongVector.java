@@ -13,9 +13,4 @@ public class TLLongVector extends TLVector<Long> {
     public TLLongVector() {
         setDestClass(Long.class);
     }
-
-    @Override
-    public String toString() {
-        return "vector<long>#" + Integer.toString(CLASS_ID);
-    }
 }

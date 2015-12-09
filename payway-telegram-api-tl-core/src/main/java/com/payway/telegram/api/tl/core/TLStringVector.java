@@ -13,9 +13,4 @@ public class TLStringVector extends TLVector<String> {
     public TLStringVector() {
         setDestClass(String.class);
     }
-
-    @Override
-    public String toString() {
-        return "vector<string>#" + Integer.toString(CLASS_ID);
-    }
 }

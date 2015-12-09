@@ -16,9 +16,4 @@ public class TLBoolTrue extends TLBool {
     public int getClassId() {
         return CLASS_ID;
     }
-
-    @Override
-    public String toString() {
-        return "boolTrue#997275b5";
-    }
 }

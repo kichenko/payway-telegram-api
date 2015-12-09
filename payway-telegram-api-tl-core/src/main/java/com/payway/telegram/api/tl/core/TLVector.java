@@ -4,9 +4,9 @@ import com.payway.telegram.api.tl.core.utils.StreamingUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -27,7 +27,7 @@ public class TLVector<T> extends TLObject implements List<T> {
     public static final int CLASS_ID = 0x1cb5c415;
 
     private Class destClass = TLObject.class;
-    private ArrayList<T> items = new ArrayList<>();
+    private List<T> items = new LinkedList<>();
 
     @Override
     public int getClassId() {
@@ -202,10 +202,5 @@ public class TLVector<T> extends TLObject implements List<T> {
     @Override
     public List<T> subList(int i, int i2) {
         return items.subList(i, i2);
-    }
-
-    @Override
-    public String toString() {
-        return "vector#" + Integer.toString(CLASS_ID);
     }
 }
